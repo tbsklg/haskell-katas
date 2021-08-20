@@ -1,4 +1,4 @@
-module War where
+module Kyu7.War where
 
 alphabetWar :: String -> String
 alphabetWar chars

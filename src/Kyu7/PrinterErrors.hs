@@ -1,4 +1,4 @@
-module Codewars.G964.Printer where
+module Kyu7.PrinterErrors where
 
 printerError :: [Char] -> [Char]
 printerError s = show failures ++ ['/'] ++ show (length s)

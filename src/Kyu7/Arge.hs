@@ -1,4 +1,4 @@
-module Codewars.G964.Arge where
+module Kyu7.Arge where
 
 nbYear :: Int -> Double -> Int -> Int -> Int
 nbYear p0 percent aug = countYears 1 p0

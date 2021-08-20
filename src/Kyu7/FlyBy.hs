@@ -1,4 +1,4 @@
-module DroneFlyBy.Kata (flyBy) where
+module Kyu7.FlyBy where
 
 flyBy :: String -> String -> String
 flyBy l [] = l

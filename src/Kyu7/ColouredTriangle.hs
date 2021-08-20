@@ -1,4 +1,4 @@
-module ColouredTriangle.Kata where
+module Kyu7.ColouredTriangle where
 
 triangle :: String -> String
 triangle [x] = [x]

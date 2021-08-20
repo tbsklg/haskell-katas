@@ -1,3 +1,5 @@
+module Kyu8.Kyu8 where
+
 import Data.Char (chr, digitToInt, isLower, isUpper, ord, toLower, toUpper)
 import Data.List (elemIndex, intersperse, isInfixOf, nub, partition, sort)
 import Text.Read (readMaybe)

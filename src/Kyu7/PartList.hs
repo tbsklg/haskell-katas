@@ -1,4 +1,4 @@
-module Codewars.G964.Partlist where
+module Kyu7.PartList where
 
 partlist :: [String] -> [(String, String)]
 partlist [] = []

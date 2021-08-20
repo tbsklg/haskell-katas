@@ -1,4 +1,4 @@
-module Codewars.G964.Gps1 where
+module Kyu7.Gps where
 
 gps :: Int -> [Double] -> Int
 gps _ [] = 0

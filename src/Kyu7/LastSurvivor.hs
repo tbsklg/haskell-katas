@@ -1,4 +1,4 @@
-module LastSurvivor (lastSurvivor) where
+module Kyu7.LastSurvivor where
 
 lastSurvivor :: String -> [Int] -> Char
 lastSurvivor [x] _ = x

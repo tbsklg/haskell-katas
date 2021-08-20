@@ -1,4 +1,4 @@
-module KillBit where
+module Kyu7.KillBit where
 
 import Data.Bits ( Bits(clearBit) )
 

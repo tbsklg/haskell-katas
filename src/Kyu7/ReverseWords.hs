@@ -1,4 +1,4 @@
-module Reverse where
+module Kyu7.ReverseWords where
 
 import Data.List.Split
 

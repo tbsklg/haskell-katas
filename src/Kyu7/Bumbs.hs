@@ -1,4 +1,4 @@
-module Bumps where
+module Kyu7.Bumbs where
 
 bump :: String -> String
 bump str

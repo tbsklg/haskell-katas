@@ -1,4 +1,4 @@
-module Kata (countRedBeads) where
+module Kyu7.CountRedBeads where
 
 countRedBeads :: Int -> Int
 countRedBeads blueBeads

@@ -1,4 +1,4 @@
-module SortNums where
+module Kyu7.SortNums where
 
 import Data.List (sort)
 

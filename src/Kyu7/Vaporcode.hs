@@ -1,4 +1,4 @@
-module Vaporcode where
+module Kyu7.Vaporcode where
 
 import Data.Char
 

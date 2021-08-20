@@ -1,4 +1,4 @@
-module Codewars.G964.Movie where
+module Kyu7.Movie where
 
 movie :: Int -> Int -> Double -> Int
 movie card ticket perc = calc 0 (fromIntegral card) 1

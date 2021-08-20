@@ -1,4 +1,4 @@
-module Codewars.G964.Maxdifflength where
+module Kyu7.MaxDiffLength where
 
 mxdiflg :: [String] -> [String] -> Maybe Int
 mxdiflg [] [] = Nothing

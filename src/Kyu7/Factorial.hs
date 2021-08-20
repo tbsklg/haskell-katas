@@ -1,4 +1,4 @@
-module Factorial where
+module Kyu7.Factorial where
 
 factorial :: Int -> Int
 factorial 0 = 1

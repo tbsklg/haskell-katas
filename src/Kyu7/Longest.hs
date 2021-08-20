@@ -1,4 +1,4 @@
-module Codewars.G964.Longest where
+module Kyu7.Longest where
 
 import Data.List (nub, sort)
 

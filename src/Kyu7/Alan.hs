@@ -1,4 +1,4 @@
-module Codewars.AlanPartridge.London where
+module Kyu7.Alan where
 
 import Data.List ( (\\) )
 

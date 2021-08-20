@@ -1,4 +1,4 @@
-module Switcheroo where
+module Kyu7.Switcheroo where
 
 switcheroo :: String -> String
 switcheroo = map switch
