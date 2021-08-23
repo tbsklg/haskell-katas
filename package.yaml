@@ -1,10 +1,10 @@
 name:                haskell-katas
 version:             0.1.0.0
-github:              "githubuser/haskell-katas"
+github:              "tbsklg/haskell-katas"
 license:             BSD3
-author:              "Author name here"
-maintainer:          "example@example.com"
-copyright:           "2021 Author name here"
+author:              "Tobias Klug"
+maintainer:          "tbs.klg@gmail.com"
+copyright:           "2021 Tobias Klug"
 
 extra-source-files:
 - README.md
@@ -47,3 +47,6 @@ tests:
     - -with-rtsopts=-N
     dependencies:
     - haskell-katas
+    - hspec == 2.7.10
+    - QuickCheck == 2.14.2
+    - HUnit == 1.6.2.0
