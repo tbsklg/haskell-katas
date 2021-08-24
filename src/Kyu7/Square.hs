@@ -9,5 +9,5 @@ isSquare n
         isSquare n 0 = False
         isSquare n counter = counter ^ 2 == n || isSquare n (counter - 1)
 
-isSquare n = square * square == n
-    where square = floor $ sqrt $ (fromIntegral n::Double)
+-- isSquare n = square * square == n
+--     where square = floor $ sqrt $ (fromIntegral n::Double)
