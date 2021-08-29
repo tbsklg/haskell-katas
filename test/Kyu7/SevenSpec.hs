@@ -1,7 +1,7 @@
 module Kyu7.SevenSpec (spec, main) where
 
-import Kyu7.Seven
-import Test.Hspec
+import Kyu7.Seven ( seven )
+import Test.Hspec ( hspec, describe, it, shouldBe, Spec )
 import Text.Printf (printf)
 
 testSeven :: Integer -> (Integer, Int) -> Spec
