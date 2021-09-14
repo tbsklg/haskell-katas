@@ -1,6 +1,6 @@
 module Kyu7.Vaporcode where
 
-import Data.Char
+import Data.Char ( toUpper )
 
 vaporcode :: String -> String
 vaporcode x = vaporize $ trim x
