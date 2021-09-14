@@ -1,6 +1,6 @@
 module Kyu7.Pandemia (infected) where
 
-import Data.List.Split
+import Data.List.Split (splitOn)
 
 infected :: String -> Double
 infected "" = 0.0
