@@ -1,7 +1,7 @@
 module Kyu7.OddOrEven where
 
 oddOrEven :: Integral a => [a] -> [Char]
-oddOrEven [] = odd'
+oddOrEven [] = even'
 oddOrEven l
     | even (sum l) = even'
     | otherwise = odd'
