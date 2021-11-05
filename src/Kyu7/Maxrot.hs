@@ -14,3 +14,8 @@ rotateOnce :: [a] -> [a]
 rotateOnce [] = []
 rotateOnce [x] = [x]
 rotateOnce (x : y : ys) = y : ys ++ [x]
+
+-- maxRot = read . go . show
+--   where go n@[_] = n
+--         go n@(x1:x2:xs) = max n (x2:go (xs ++ [x1]))
+--         --                          We only need to check if the rotated part is better.
