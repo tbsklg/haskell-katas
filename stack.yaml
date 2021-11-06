@@ -65,3 +65,7 @@ packages:
 #
 # Allow a newer minor version of GHC than the snapshot specifies
 # compiler-check: newer-minor
+
+# Haskell Language Server can display Haddock documentation on hover and completions if the project and its dependencies have been built with the -haddock GHC flag.
+ghc-options:
+  '$everything': -haddock
