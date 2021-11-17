@@ -23,6 +23,7 @@ dependencies:
 - base >= 4.7 && < 5
 - split == 0.2.3.4
 - text == 1.2.4.1
+- time == 1.9.3
 
 library:
   source-dirs: src
