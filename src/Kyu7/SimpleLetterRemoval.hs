@@ -16,3 +16,5 @@ solve l k = remove' l k alphabet
 
 alphabet :: [Char]
 alphabet = ['a' .. 'z']
+
+-- map fst . sortOn snd . drop k . sort $ zip xs [0..]
