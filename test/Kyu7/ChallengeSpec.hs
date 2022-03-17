@@ -26,8 +26,8 @@ spec = describe "noRepeat" $ do
     forAll (sublistOf ['a'..'z'] >>= shuffle >>= multiDuplicatify) $ \(ys,xs) ->
       noRepeat xs `shouldSatisfy` (`elem` ys)
   
-  it "returns the _first_ non-duplicate character" $ 
-    pendingWith "well, a random test would spoil the fun, right?"  
+  -- it "returns the _first_ non-duplicate character" $ 
+  --   pendingWith "well, a random test would spoil the fun, right?"  
 
 -- Helper functions below.
 --
