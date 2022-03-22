@@ -6,10 +6,10 @@ dirReduce :: [Direction] -> [Direction]
 dirReduce [] = []
 dirReduce dirs = foldl reduce [head dirs] $ tail dirs
   where
-    reduce d c
-      | null d = [c]
-      | last d == opposite c = init d
-      | otherwise = d ++ [c]
+    reduce path nextDir
+      | null path = [nextDir]
+      | last path == opposite nextDir = init path
+      | otherwise = path ++ [nextDir]
 
 opposite :: Direction -> Direction
 opposite North = South
