@@ -1,10 +1,8 @@
 module Kyu7.MaxSumBetweenTwoNegatives (maxSumBetweenTwoNegatives) where
 
-import Debug.Trace (traceShow)
-
 maxSumBetweenTwoNegatives :: [Int] -> Maybe Int
 maxSumBetweenTwoNegatives s
-  | not $ null . slice $ s = traceShow s $ Just $ maximum . slice $ s
+  | not $ null . slice $ s = Just $ maximum . slice $ s
   | otherwise = Nothing
 
 negatives :: (Ord a, Num a) => [a] -> Int
