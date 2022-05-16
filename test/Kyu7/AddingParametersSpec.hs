@@ -1,5 +1,5 @@
-module Codewars.Kata.AddingParametersSpec where
-import Codewars.Kata.AddingParameters (add)
+module Kyu7.AddingParametersSpec where
+import Kyu7.AddingParameters (add)
 import Test.Hspec
 import Test.QuickCheck
 
