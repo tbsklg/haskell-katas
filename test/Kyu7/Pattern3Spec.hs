@@ -1,6 +1,6 @@
-module Haskell.Codewars.PatternSpec (spec) where
+module Kyu7.Pattern3Spec (spec) where
 import Test.Hspec
-import Haskell.Codewars.Pattern (pattern)
+import Kyu7.Pattern3 (pattern)
 
 main = hspec spec
 spec = do
