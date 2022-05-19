@@ -24,7 +24,3 @@ spec = do
     describe "Composition of encodeStr and decode" $ do
         let u = "How can we become the kind of people that face our fear and do it anyway?"
         testCaesar u 1 u
-
-    describe "shift" $ do
-        it "should perform shift right" $ do
-            shiftR 1 'y' `shouldBe` 'z'

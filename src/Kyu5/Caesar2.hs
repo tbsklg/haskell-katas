@@ -3,41 +3,50 @@ module Kyu5.Caesar2 where
 import Data.Char (chr, isAlpha, isLower, isUpper, ord, toLower)
 import Data.List.Split (chunksOf)
 
-decode :: [String] -> String
-decode s = drop 2 . concatMap (map (shiftL rotate')) . chunk' . concat $ s
+type Message = String
+
+type Prefix = String
+
+type Places = Int
+
+type Offset = Int
+
+type Code = [String]
+
+encodeStr :: Message -> Places -> Code
+encodeStr m p = chunk' . (++) (prefix p m) . map (shiftUp p) $ m
+
+decode :: Code -> Message
+decode c = drop 2 . concatMap (map (shiftDown places)) . chunk' . concat $ c
   where
-    rotate' = rotate (head prefix) (prefix !! 1)
-    prefix = take 2 . head $ s
+    places = rotate (take 2 . head $ c)
 
-encodeStr :: String -> Int -> [String]
-encodeStr s i = chunk' . (++) (prefix i (head s)) . map (shiftR i) $ s
-
-shiftR :: Int -> Char -> Char
-shiftR n c
-  | isUpper c && isAlpha c = chr . convert offsetU . (+) n . ord $ c
-  | isLower c && isAlpha c = chr . convert offsetL . (+) n . ord $ c
+shiftUp :: Places -> Char -> Char
+shiftUp p c
+  | isUpper c && isAlpha c = chr . offsetUpper . (+) p . ord $ c
+  | isLower c && isAlpha c = chr . offsetLower . (+) p . ord $ c
   | otherwise = c
 
-shiftL :: Int -> Char -> Char
-shiftL n c
-  | isUpper c && isAlpha c = chr . convert offsetU . flip (-) n . ord $ c
-  | isLower c && isAlpha c = chr . convert offsetL . flip (-) n . ord $ c
+shiftDown :: Places -> Char -> Char
+shiftDown p c
+  | isUpper c && isAlpha c = chr . offsetUpper . flip (-) p . ord $ c
+  | isLower c && isAlpha c = chr . offsetLower . flip (-) p . ord $ c
   | otherwise = c
 
-offsetL :: Int
-offsetL = 97
+offsetLower :: Int -> Int
+offsetLower = offsetAlpha 97
 
-offsetU :: Int
-offsetU = 65
+offsetUpper :: Int -> Int
+offsetUpper = offsetAlpha 65
 
-convert :: Int -> Int -> Int
-convert offset code = (+) offset . flip mod 26 . (-) code $ offset
+offsetAlpha :: Offset -> Int -> Int
+offsetAlpha o code = (+) o . flip mod 26 . (-) code $ o
 
-prefix :: Int -> Char -> String
-prefix n c = toLower c : [shiftR n . toLower $ c]
+prefix :: Places -> Message -> Prefix
+prefix p m = (toLower . head $ m) : [shiftUp p . toLower . head $ m]
 
-rotate :: Char -> Char -> Int
-rotate a b = length . takeWhile (/= b) . dropWhile (/= a) . cycle $ ['a' .. 'z']
+rotate :: Prefix -> Places
+rotate p = length . takeWhile (/= last p) . dropWhile (/= head p) . cycle $ ['a' .. 'z']
 
-chunk' :: String -> [String]
-chunk' str = chunksOf (ceiling . flip (/) 5 . fromIntegral . length $ str) str
+chunk' :: Message -> Code
+chunk' message = chunksOf (ceiling . flip (/) 5 . fromIntegral . length $ message) message
