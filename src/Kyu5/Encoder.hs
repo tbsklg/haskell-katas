@@ -1,25 +1,50 @@
 module Kyu5.Encoder where
 
 import Data.List (intercalate)
+import Text.Printf (printf)
 
-data Encode = IDE | CON | SIN deriving (Show, Eq)
+data Sequence = Sequence {number :: Int, count :: Int} deriving (Show)
+
+data Consecutive = Consecutive {cFirst :: Int, cLast :: Int}
+
+data Interval = Interval {iFirst :: Int, iLast :: Int, iInterval :: Int}
 
 compress :: [Int] -> String
-compress = intercalate "," . map print' . foldr sequence []
+compress = intercalate "," . encode
+
+encode :: [Int] -> [String]
+encode [] = []
+encode [x] = [show x]
+encode [x, y]
+  | x == y = [printSequence s]
+  | otherwise = [show x, show y]
   where
-    sequence x [] = [(x, 1, SIN)]
-    sequence x l@((i, c, e) : xs)
-      | x == i = (x, c + 1, IDE) : xs
-      | otherwise = (x, 1, SIN) : l
+    s = Sequence {number = x, count = 2}
+encode l@(x : y : z : xs)
+  | x == y = printSequence s : encode sNext
+  | abs (x - z) == 2 = printConsecutives c : encode cNext
+  | abs (x - y) == abs (y - z) = printInterval i : encode cNext
+  | otherwise = show x : encode (tail l)
+  where
+    (sequence, sNext) = span (== x) l
+    (consecutives, cNext) = interval l
 
-    -- consecutives x [] = [x]
-    -- consecutives x [z] = [x, z]
-    -- consecutives x@(a, 1, SIN) l@((i, c, e) : (i', c', e') : xs)
-    --   | abs i' - i == 1 && abs i - a == 1 = (i', a, CON) : xs
-    --   | otherwise = x : l
-    -- consecutives x@(_, _, _) l = x : l
+    c = Consecutive {cFirst = head consecutives, cLast = last consecutives}
+    i = Interval {iFirst = head consecutives, iLast = last consecutives, iInterval = abs (x - y)}
+    s = Sequence {number = x, count = length sequence}
 
-print' :: (Int, Int, Encode) -> String
-print' (a, b, SIN) = show a
-print' (a, b, IDE) = show b ++ "*" ++ show a
-print' (a, b, CON) = show b ++ "-" ++ show a
+interval :: (Eq b, Enum b) => [b] -> ([b], [b])
+interval l@(x : y : _) = (map fst result, map fst next)
+  where
+    result = takeWhile (uncurry (==)) . zip l $ [x, y ..]
+    next = dropWhile (uncurry (==)) . zip l $ [x, y ..]
+interval _ = ([], [])
+
+printSequence :: Sequence -> [Char]
+printSequence Sequence {number = n, count = c} = printf "%d*%d" n c
+
+printConsecutives :: Consecutive -> [Char]
+printConsecutives Consecutive {cFirst = f, cLast = l} = printf "%d-%d" f l
+
+printInterval :: Interval -> [Char]
+printInterval Interval {iFirst = f, iLast = l, iInterval = i} = printf "%d-%d/%d" f l i
