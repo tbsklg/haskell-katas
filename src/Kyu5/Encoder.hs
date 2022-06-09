@@ -23,7 +23,7 @@ encode [x, y]
 encode l@(x : y : z : xs)
   | x == y = printSequence s : encode sNext
   | abs (x - z) == 2 = printConsecutives c : encode cNext
-  | abs (x - y) == abs (y - z) = printInterval i : encode cNext
+  | x - y == y - z = printInterval i : encode cNext
   | otherwise = show x : encode (tail l)
   where
     (sequence, sNext) = span (== x) l
