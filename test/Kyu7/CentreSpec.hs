@@ -13,7 +13,6 @@ spec = do
             (isInMiddle "AAabcBB") `shouldBe` True
             (isInMiddle "AabcBB") `shouldBe` True
             (isInMiddle "AabcBBB") `shouldBe` False
-            (isInMiddle "abc") `shouldBe` False
 
 -- the following line is optional for 8.2
 main = hspec spec
