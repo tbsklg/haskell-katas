@@ -9,10 +9,6 @@ spec = do
   it "correct result" $ do
     -- printf babySharkLyrics
     babySharkLyrics `shouldBe` babyShark
-  it "in less than 300 characters" $ do
-    sourceLength <- length <$> readFile "/workspace/solution.txt"
-    printf "Actual number of characters: %v" sourceLength
-    sourceLength `shouldSatisfy` (< 300)
 
 babyShark :: String
 babyShark = unlines [ "Baby shark, doo doo doo doo doo doo"
