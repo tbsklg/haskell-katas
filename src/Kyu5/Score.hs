@@ -11,3 +11,4 @@ score l@(x : xs) = score' . length . filter (== x) $ l
       | x == 1 = 100 + score xs
       | x == 5 = 50 + score xs
       | otherwise = score xs
+  
