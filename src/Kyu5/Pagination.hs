@@ -11,9 +11,8 @@ pageCount :: Collection a -> ItemsPerPage -> Int
 pageCount xs n = ceiling . (/) (fromIntegral . itemCount $ xs) $ fromIntegral n
 
 pageItemCount :: Collection a -> ItemsPerPage -> Int -> Maybe Int
-pageItemCount [] _ _ = Nothing
+pageItemCount [] n page | page < 0 = Nothing
 pageItemCount xs n page
-  | page < 0 = Nothing
   | page >= pageCount xs n = Nothing
   | otherwise = Just . minimum $ [itemCount xs - n * page, n]
 
