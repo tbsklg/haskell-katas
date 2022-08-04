@@ -1,6 +1,6 @@
 module Kyu5.BeerSpec where
 
-import Test.Hspec
+import Test.Hspec ( hspec, it, shouldBe, Spec )
 import Kyu5.Beer
 
 -- `spec` of type `Spec` must exist
