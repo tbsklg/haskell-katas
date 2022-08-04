@@ -10,4 +10,5 @@ spec = do
         cardGame 4 `shouldBe` 3
         cardGame 5 `shouldBe` 2
         cardGame 12 `shouldBe` 9
+        cardGame 33 `shouldBe` 6
         cardGame 100000000000 `shouldBe` 99999999950
