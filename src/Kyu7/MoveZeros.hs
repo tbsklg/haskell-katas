@@ -1,4 +1,4 @@
-module Kyu7.MoveZeroes where
+module Kyu7.MoveZeros where
 
 moveZeroes :: Bool -> [Int] -> [Int]
 moveZeroes isRight xs
