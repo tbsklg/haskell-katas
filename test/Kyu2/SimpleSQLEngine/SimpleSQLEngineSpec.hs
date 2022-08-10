@@ -1,7 +1,7 @@
-module Kyu2.SimpleSQLEngineSpec (spec) where
+module Kyu2.SimpleSQLEngine.SimpleSQLEngineSpec (spec) where
 
 import Data.List (sort)
-import Kyu2.SimpleSQLEngine (sqlEngine)
+import Kyu2.SimpleSQLEngine.SimpleSQLEngine (sqlEngine)
 import Test.Hspec
 
 movieDatabase =
