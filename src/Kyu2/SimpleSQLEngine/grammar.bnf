@@ -1,0 +1,74 @@
+// -----------------------------------
+// Lexical grammar
+
+%lex
+
+%%
+
+\s+                                              /* skip whitespace */
+
+\w+                                              return 'TEXT'
+
+\<\>                                             return 'COMPARISON'
+\<\=                                             return 'COMPARISON'
+\>\=                                             return 'COMPARISON'
+[=|>|<]                                          return 'COMPARISON' 
+
+/lex
+
+
+// -----------------------------------
+// Syntactic grammar
+
+%%
+
+query       
+    : select from join where
+    ;
+select
+    : 'select' column_id
+    ;
+from
+    : 'from' table_name
+    ;
+where       
+    : 'where' value_test
+    | $
+    ;
+join 
+    : 'join' table_name 'on' value_test join
+    | where
+    ;
+value_test  
+    : column_name comparison column_name
+    ;
+comparison
+    : COMPARISON
+    ;
+column_id
+    : identifier ',' column_id
+    | identifier
+    ;
+table_name
+    : TEXT
+    ;
+column_name
+    : TEXT
+    ;
+identifier
+    : table_name '.' column_name
+    ;
+
+// query         =  select, ws, from, [ ws, join ], [ ws, where ] ;
+// select        =  "SELECT ", column-id, [ { ", ", column-id } ] ;
+// from          =  "FROM ", table-name, [ { ws, join } ] ;
+// join          =  "JOIN ", table-name, " on ", value-test ;
+// where         =  "WHERE ", value-test ;
+// value-test    =  value, comparison, value;
+// column-id     =  table-name, ".", column-name ;
+// table-name    = ? a valid SQL table name ? ;
+// column-name   = ? a valid SQL column name ? ;
+// value         =  column-id | const
+// comparison    =  " = " | " > " | " < " | " <= " | " >= " | " <> " ;
+// const         =  ? a number ? | ? a SQL single-quoted string ? ;
+// ws            = " " | "\n" | ws, ws ;

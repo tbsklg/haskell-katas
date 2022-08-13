@@ -63,6 +63,10 @@ spec = do
       tokenize " JoIn    "
         `shouldBe` [ (Token {sqlType = JOIN, value = "join"})
                    ]
+      tokenize " JoIn   on "
+        `shouldBe` [ (Token {sqlType = JOIN, value = "join"}),
+                     (Token {sqlType = ON, value = "ob"})
+                   ]
 
     it "should tokenize `WHERE`" $ do
       tokenize " where    "

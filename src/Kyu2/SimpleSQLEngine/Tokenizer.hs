@@ -30,6 +30,7 @@ tokens =
     ("from", (Token {sqlType = FROM, value = "from"})),
     ("join", (Token {sqlType = JOIN, value = "join"})),
     ("where", (Token {sqlType = WHERE, value = "where"})),
+    ("on", (Token {sqlType = ON, value = "on"})),
     ("=", (Token {sqlType = COMPARISON, value = "="})),
     (">", (Token {sqlType = COMPARISON, value = ">"})),
     ("<", (Token {sqlType = COMPARISON, value = "<"})),
