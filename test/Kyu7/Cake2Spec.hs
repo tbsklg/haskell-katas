@@ -1,4 +1,4 @@
-module Kyu7.CakeSpec where
+module Kyu7.Cake2Spec where
 
 import Test.Hspec
 import Kyu7.Cake2
