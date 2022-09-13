@@ -1,10 +1,10 @@
 module Kyu7.ApproxRootSpec where
 
-import Codewars 
+import Codewars (shouldBeApproxPrec)
 import Kyu7.ApproxRoot
 import Test.Hspec
 
-fpCompare n s = assertApproxEqual msg 0.01 (approxRoot n) s
+fpCompare n s = shouldBeApproxPrec 0.01 (approxRoot n) s
   where
     msg = "What's up Willis? "
 

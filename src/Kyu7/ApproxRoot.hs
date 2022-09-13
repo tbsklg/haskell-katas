@@ -1,5 +1,4 @@
 module Kyu7.ApproxRoot where
-import Debug.Trace
 
 --no rounding, just compares ~0.01 accuracy
 
