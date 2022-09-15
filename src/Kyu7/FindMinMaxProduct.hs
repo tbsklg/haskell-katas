@@ -6,6 +6,6 @@ findMinMaxProduct :: [Integer] -> Int -> Maybe (Integer, Integer)
 findMinMaxProduct [] _ = Nothing
 findMinMaxProduct xs n
   | n > length xs = Nothing
-  | otherwise = Just (maximum ps, minimum ps)
+  | otherwise = Just (minimum ps, maximum ps)
   where
     ps = map product . filter (\x -> length x == n) . subsequences $ xs
