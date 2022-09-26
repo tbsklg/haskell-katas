@@ -24,6 +24,3 @@ spec = do
     it "elementAt k [1..] should be Nothing provided k < 1" $ do
       property $ forAll (suchThat arbitrary (< 1)) $
         \k -> elementAt k [1..] `shouldBe` Nothing
-  describe "Can't use builtins..." $ do
-    it "Prelude.!! and Data.List are disabled" $ do
-      solutionShouldHideAll [FromModule "Prelude" "!!", Module "Data.List"]
