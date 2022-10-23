@@ -1,5 +1,5 @@
-module NumberFactorsSpec where
-import NumberFactors
+module Kyu7.NumberFactorsSpec where
+import Kyu7.NumberFactors
 import Test.Hspec
 import Test.QuickCheck
 
