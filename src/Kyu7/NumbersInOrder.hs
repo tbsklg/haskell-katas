@@ -1,4 +1,4 @@
-module Kyu7.NumbersInOrder (isAscOrder) where 
+module Kyu7.NumbersInOrder (isAscOrder) where
 
 import Data.List (sort)
 

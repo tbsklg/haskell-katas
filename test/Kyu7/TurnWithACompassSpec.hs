@@ -1,6 +1,6 @@
 module Kyu7.TurnWithACompassSpec (spec) where
 
-import Kyu7.TurnWithACompass (direction, Direction (..))
+import Kyu7.TurnWithACompass (Direction (..), direction)
 import Test.Hspec
 
 spec :: Spec

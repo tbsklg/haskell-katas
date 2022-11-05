@@ -6,7 +6,6 @@ import Test.Hspec
 spec :: Spec
 spec = do
   it "example tests" $ do
-
     let fruits = findMostSimilar ["cherry", "pineapple", "melon", "strawberry", "raspberry"]
     fruits "strawbery" `shouldBe` "strawberry"
     fruits "berry" `shouldBe` "cherry"

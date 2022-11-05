@@ -27,5 +27,7 @@ spec = do
       Complex 2 4 * Complex 3 1 `shouldBe` Complex 2 14
 
 zero = Complex 0 0
+
 one = Complex 1 0
+
 i = Complex 0 1

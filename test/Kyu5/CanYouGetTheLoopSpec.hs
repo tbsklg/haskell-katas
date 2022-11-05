@@ -1,8 +1,10 @@
 module Kyu5.CanYouGetTheLoopSpec where
+
 import Kyu5.CanYouGetTheLoop
 import Test.Hspec
 
 main = hspec spec
+
 spec = do
   describe "loopChain" $ do
     it "finds loop in list of 4 nodes" $ do

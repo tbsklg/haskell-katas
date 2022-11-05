@@ -8,4 +8,4 @@ spec = do
   it "example tests" $ do
     powers 1 `shouldBe` [1]
     powers 2 `shouldBe` [2]
-    powers 6 `shouldBe` [2,4]
+    powers 6 `shouldBe` [2, 4]

@@ -1,7 +1,7 @@
 module Kyu7.PointDistanceSpec where
 
+import Kyu7.PointDistance (Point (..), distanceBetweenPoints)
 import Test.Hspec
-import Kyu7.PointDistance (distanceBetweenPoints, Point (..))
 
 spec :: Spec
 spec = do

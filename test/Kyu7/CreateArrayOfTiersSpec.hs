@@ -1,7 +1,7 @@
 module Kyu7.CreateArrayOfTiersSpec (spec) where
 
-import Test.Hspec
 import Kyu7.CreateArrayOfTiers (createArrayOfTiers)
+import Test.Hspec
 
 spec :: Spec
 spec = do

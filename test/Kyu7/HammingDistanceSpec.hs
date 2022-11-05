@@ -1,4 +1,5 @@
 module Kyu7.HammingDistanceSpec where
+
 import Kyu7.HammingDistance
 import Test.Hspec
 

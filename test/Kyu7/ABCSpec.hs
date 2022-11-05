@@ -1,4 +1,5 @@
 module Kyu7.ABCSpec where
+
 import Kyu7.ABC
 import Test.Hspec
 

@@ -1,6 +1,6 @@
 module Kyu7.ProductOrSumSpec (spec) where
 
-import Kyu7.ProductOrSum (productOrSum, ProductOrSum(..))
+import Kyu7.ProductOrSum (ProductOrSum (..), productOrSum)
 import Test.Hspec
 
 spec :: Spec

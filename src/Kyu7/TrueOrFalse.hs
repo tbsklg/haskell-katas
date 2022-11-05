@@ -1,22 +1,24 @@
 module Kyu7.TrueOrFalse where
 
-import Prelude hiding (Bool (..), (&&), (||), not, otherwise)
+import Prelude hiding (Bool (..), not, otherwise, (&&), (||))
 
 data Bool = True | False deriving (Eq, Show)
 
 -- Boolean and
 infixr 3 &&
+
 (&&) :: Bool -> Bool -> Bool
 (&&) True True = True
 (&&) _ _ = False
 
 -- Boolean or
 infixr 2 ||
+
 (||) :: Bool -> Bool -> Bool
 (||) True True = True
-(||) True False = True 
-(||) False True = True 
-(||) _ _ = False 
+(||) True False = True
+(||) False True = True
+(||) _ _ = False
 
 -- Boolean not
 not :: Bool -> Bool

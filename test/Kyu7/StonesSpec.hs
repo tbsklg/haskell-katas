@@ -1,14 +1,13 @@
 module Kyu7.StonesSpec where
 
-import Test.Hspec
 import Kyu7.Stones (solution)
-
+import Test.Hspec
 
 spec :: Spec
 spec = do
   describe "Fixed test cases:" $ do
     it "RRGGBB" $ do
-        (solution "RRGGBB") `shouldBe` 3
+      (solution "RRGGBB") `shouldBe` 3
     it "RGBRGB" $ do
       (solution "RGBRGB") `shouldBe` 0
     it "BGRBBGGBRRR" $ do

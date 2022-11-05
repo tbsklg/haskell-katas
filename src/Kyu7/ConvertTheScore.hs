@@ -1,6 +1,6 @@
 module Kyu7.ConvertTheScore (scoreboard) where
 
-import Data.Maybe ( fromJust )
+import Data.Maybe (fromJust)
 
 scoreboard :: String -> (Int, Int)
 scoreboard xs = (home, away)
@@ -27,4 +27,3 @@ score =
     ("eight", 8),
     ("nine", 9)
   ]
-  

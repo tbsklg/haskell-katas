@@ -1,4 +1,5 @@
 module Kyu7.CWSpamSpec where
+
 import Kyu7.CWSpam (spam)
 import Test.Hspec
 import Test.QuickCheck

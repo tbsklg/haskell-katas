@@ -1,7 +1,7 @@
 module Kyu7.AddingUpLettersSpec where
 
-import Test.Hspec
 import Kyu7.AddingUpLetters (addLetters)
+import Test.Hspec
 
 spec :: Spec
 spec = do

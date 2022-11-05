@@ -1,8 +1,10 @@
 module Kyu7.Pattern3Spec (spec) where
-import Test.Hspec
+
 import Kyu7.Pattern3 (pattern)
+import Test.Hspec
 
 main = hspec spec
+
 spec = do
   describe "Testing Pattern" $ do
     it "Static tests" $ do

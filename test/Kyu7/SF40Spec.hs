@@ -1,7 +1,7 @@
 module Kyu7.SF40Spec where
 
-import Test.Hspec
 import Kyu7.SF40
+import Test.Hspec
 
 -- `spec` of type `Spec` must exist
 spec :: Spec
@@ -14,6 +14,6 @@ spec = do
     timedReading 6 "Zebras evolved among the Old World horses within the last four million years." `shouldBe` 11
     timedReading 5 "Although zebra species may have overlapping ranges, they do not interbreed." `shouldBe` 6
     timedReading 1 "Oh!" `shouldBe` 0
-  
+
 -- the following line is optional for 8.2
 main = hspec spec

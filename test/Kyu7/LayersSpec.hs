@@ -1,7 +1,7 @@
 module Kyu7.LayersSpec where
 
-import Test.Hspec
 import Kyu7.Layers
+import Test.Hspec
 
 spec :: Spec
 spec = do

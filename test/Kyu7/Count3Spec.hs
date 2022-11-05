@@ -1,7 +1,7 @@
 module Kyu7.Count3Spec where
 
-import Test.Hspec
 import Kyu7.Count3
+import Test.Hspec
 
 spec :: Spec
 spec = do

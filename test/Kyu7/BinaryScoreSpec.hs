@@ -8,6 +8,7 @@ tester :: Integer -> Integer -> Spec
 tester n ans = it ("should work when n = " ++ show n) $ score n `shouldBe` ans
 
 main = hspec spec
+
 spec = do
   describe "score" $ do
     tester 0 0

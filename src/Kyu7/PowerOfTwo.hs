@@ -1,5 +1,5 @@
 module Kyu7.PowerOfTwo where
- 
+
 import Data.Bits ((.&.))
 
 isPowerOfTwo :: Int -> Bool

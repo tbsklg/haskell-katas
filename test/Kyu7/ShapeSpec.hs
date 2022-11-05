@@ -1,19 +1,17 @@
 module Kyu7.ShapeSpec where
 
-import Test.Hspec
 import Kyu7.Shape
-
 import Test.HUnit (assertEqual)
+import Test.Hspec
 
 test n exp = do
   print $ "Looking for: " ++ show exp
   assertEqual msg exp actual
-  where 
+  where
     actual = shapeArea n
     msg = "Failed at: " ++ showArgs
     showArgs = show n
-    
-    
+
 -- `spec` of type `Spec` must exist
 spec :: Spec
 spec = do

@@ -4,6 +4,7 @@ import Kyu7.Capitalize
 import Test.Hspec
 
 main = hspec spec
+
 spec = do
   describe "Alternate capitalization" $ do
     it "should work for simple examples" $ do

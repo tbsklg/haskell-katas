@@ -1,7 +1,7 @@
 module Kyu7.CelsiusToRomerSpec where
 
-import Test.Hspec
 import Kyu7.CelsiusToRomer (celsiusToRomer)
+import Test.Hspec
 
 spec :: Spec
 spec = do

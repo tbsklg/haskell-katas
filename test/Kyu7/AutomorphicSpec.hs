@@ -1,7 +1,7 @@
 module Kyu7.AutomorphicSpec where
 
-import Test.Hspec
 import Kyu7.Automorphic
+import Test.Hspec
 
 spec :: Spec
 spec = do

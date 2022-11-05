@@ -6,5 +6,5 @@ import Test.QuickCheck
 
 spec = do
   it "works for some examples" $ do
-    matchList ["Erlang", "Javascript"]  ["Go", "C++", "Haskell"] `shouldBe`  0
-    matchList ["Haskell", "Javascript"] ["Go", "C++", "Haskell"] `shouldBe`  1
+    matchList ["Erlang", "Javascript"] ["Go", "C++", "Haskell"] `shouldBe` 0
+    matchList ["Haskell", "Javascript"] ["Go", "C++", "Haskell"] `shouldBe` 1

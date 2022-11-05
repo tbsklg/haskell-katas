@@ -1,4 +1,5 @@
 module Kyu7.SubstringCountSpec where
+
 import Kyu7.SubstringCount
 import Test.Hspec
 

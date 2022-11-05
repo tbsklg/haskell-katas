@@ -1,7 +1,7 @@
 module Kyu7.EliminateTheIntrudersSpec (spec) where
 
-import Test.Hspec
 import Kyu7.EliminateTheIntruders (eliminateUnsetBits)
+import Test.Hspec
 
 spec :: Spec
 spec = do

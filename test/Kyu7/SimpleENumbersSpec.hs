@@ -1,4 +1,5 @@
 module Kyu7.SimpleENumbersSpec where
+
 import Kyu7.SimpleENumbers
 import Test.Hspec
 

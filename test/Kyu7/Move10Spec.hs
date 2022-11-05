@@ -1,21 +1,20 @@
 module Kyu7.Move10Spec where
 
-import Test.Hspec
 import Kyu7.Move10
-
 import Test.HUnit (assertEqual)
+import Test.Hspec
 
 test s exp = do
   assertEqual msg exp actual
-  where 
+  where
     actual = move10 s
     msg = "Failed at: " ++ showArgs
     showArgs = s
-    
+
 -- `spec` of type `Spec` must exist
 spec :: Spec
 spec = do
-  it "Basic tests" $ do 
+  it "Basic tests" $ do
     test "testcase" "docdmkco"
     test "codewars" "mynogkbc"
     test "exampletesthere" "ohkwzvodocdrobo"

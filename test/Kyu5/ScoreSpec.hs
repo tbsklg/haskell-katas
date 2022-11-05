@@ -7,7 +7,7 @@ spec :: Spec
 spec = do
   it "should value this as worthless" $ do
     score [2, 3, 4, 6, 2] `shouldBe` 0
-  
+
   it "should value this triplet correctly" $ do
     score [4, 4, 4, 3, 3] `shouldBe` 400
 

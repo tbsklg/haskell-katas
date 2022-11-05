@@ -1,6 +1,6 @@
 module Kyu7.BalanceParentheses (fixParens) where
 
-import Data.List (isPrefixOf, findIndex, tails)
+import Data.List (findIndex, isPrefixOf, tails)
 
 fixParens :: String -> String
 fixParens s = replicate lefts '(' ++ s ++ replicate rights ')'
@@ -10,8 +10,8 @@ fixParens s = replicate lefts '(' ++ s ++ replicate rights ')'
 
 removeValids :: String -> String
 removeValids s = case findIndex (isPrefixOf "()") (tails s) of
-    Just _ -> removeValids . remove $ s
-    _ -> s
+  Just _ -> removeValids . remove $ s
+  _ -> s
 
 remove :: String -> String
 remove "" = ""

@@ -1,12 +1,10 @@
 module Kyu7.TrueOrFalseSpec where
 
-import Prelude hiding (Bool (..), (&&), (||), not, otherwise)
-
+import Codewars
 import Kyu7.TrueOrFalse
-
 import Test.Hspec
 import Test.QuickCheck
-import Codewars
+import Prelude hiding (Bool (..), not, otherwise, (&&), (||))
 
 spec :: Spec
 spec = do

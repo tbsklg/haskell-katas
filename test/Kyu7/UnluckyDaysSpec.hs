@@ -1,7 +1,7 @@
 module Kyu7.UnluckyDaysSpec where
 
-import Test.Hspec
 import Kyu7.UnluckyDays
+import Test.Hspec
 
 main :: IO ()
 main = hspec spec

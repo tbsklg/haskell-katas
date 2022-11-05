@@ -1,4 +1,5 @@
 module Kyu7.FailedFilterSpec where
+
 import Kyu7.FailedFilter
 import Test.Hspec
 

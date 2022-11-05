@@ -1,7 +1,7 @@
 module Kyu7.SeaSickSpec where
-import Test.Hspec
 
 import Kyu7.SeaSick (seaSick)
+import Test.Hspec
 
 spec :: Spec
 spec = do
@@ -12,4 +12,4 @@ spec = do
       seaSick "______~___~_" `shouldBe` "Throw Up"
       seaSick "____" `shouldBe` "No Problem"
       seaSick "_~~_~____~~~~~~~__~_~" `shouldBe` "Throw Up"
-      seaSick  "~~~~~_~~~~" `shouldBe` "No Problem"
+      seaSick "~~~~~_~~~~" `shouldBe` "No Problem"

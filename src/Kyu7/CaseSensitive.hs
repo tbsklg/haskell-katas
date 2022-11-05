@@ -7,4 +7,3 @@ caseSensitive xs = (l, r)
   where
     l = all isLower xs
     r = filter isUpper xs
-    

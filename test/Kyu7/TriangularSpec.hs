@@ -16,4 +16,3 @@ spec = do
     it "should handle non-positive input" $ do
       property $ \x ->
         triangular (negate . abs $ x) == 0
-      

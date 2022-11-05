@@ -1,8 +1,8 @@
 module Kyu7.SumRecursivelySpec where
 
 import Kyu7.SumRecursively
-import Test.QuickCheck
 import Test.Hspec
+import Test.QuickCheck
 
 spec :: Spec
 spec = do
@@ -10,4 +10,4 @@ spec = do
     it "should work for some examples" $ do
       sumR [] `shouldBe` 0
       sumR [1] `shouldBe` 1
-      sumR [1,1,1] `shouldBe` 3
+      sumR [1, 1, 1] `shouldBe` 3

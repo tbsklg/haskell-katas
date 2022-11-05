@@ -1,4 +1,5 @@
 module Kyu7.SumOfMultiplesSpec where
+
 import Kyu7.SumOfMultiples
 import Test.Hspec
 

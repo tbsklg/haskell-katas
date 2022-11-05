@@ -22,7 +22,8 @@ findMostSimilar dictionary term = fst . minimumBy (compare `on` snd) . map (\x -
         lev u v
           | xa ! u == ya ! v = levMemo ! (u -1, v -1)
           | otherwise =
-            1 + minimum
+            1
+              + minimum
                 [ levMemo ! (u, v -1),
                   levMemo ! (u -1, v),
                   levMemo ! (u -1, v -1)

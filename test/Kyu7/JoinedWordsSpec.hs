@@ -1,8 +1,8 @@
 module Kyu7.JoinedWordsSpec where
 
 import Kyu7.JoinedWords
-import Test.QuickCheck
 import Test.Hspec
+import Test.QuickCheck
 
 spec :: Spec
 spec = do

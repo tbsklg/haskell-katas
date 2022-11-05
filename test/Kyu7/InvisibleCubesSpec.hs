@@ -1,7 +1,7 @@
 module Kyu7.InvisibleCubesSpec where
 
+import Kyu7.InvisibleCubes (notVisibleCubes)
 import Test.Hspec
-import Kyu7.InvisibleCubes ( notVisibleCubes )
 
 spec :: Spec
 spec = do
@@ -28,4 +28,3 @@ spec = do
       notVisibleCubes 123458 `shouldBe` 1881640295202816
       notVisibleCubes 123459 `shouldBe` 1881686019724993
       notVisibleCubes 123460 `shouldBe` 1881731744987912
-      

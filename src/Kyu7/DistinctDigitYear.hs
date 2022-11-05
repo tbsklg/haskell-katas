@@ -3,7 +3,7 @@ module Kyu7.DistinctDigitYear where
 import Data.List (nub)
 
 distinctDigitYear :: Int -> Int
-distinctDigitYear x = head . dropWhile (not . isDistinct) $ [(x + 1) .. ]
+distinctDigitYear x = head . dropWhile (not . isDistinct) $ [(x + 1) ..]
 
 isDistinct :: Int -> Bool
 isDistinct a = digits a == (nub . digits $ a)

@@ -1,7 +1,7 @@
 module Kyu7.StringPrefixAndSuffixSpec (spec) where
 
-import Test.Hspec
 import Kyu7.StringPrefixAndSuffix (solve)
+import Test.Hspec
 
 spec :: Spec
 spec = do

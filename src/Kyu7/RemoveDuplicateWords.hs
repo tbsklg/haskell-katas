@@ -1,4 +1,4 @@
-module Kyu7.RemoveDuplicateWords where 
+module Kyu7.RemoveDuplicateWords where
 
 import Data.List (nub)
 

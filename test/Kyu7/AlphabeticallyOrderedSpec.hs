@@ -1,9 +1,9 @@
 module Kyu7.AlphabeticallyOrderedSpec where
 
+import Data.List (sort)
 import Kyu7.AlphabeticallyOrdered
 import Test.Hspec
 import Test.QuickCheck
-import Data.List(sort)
 
 spec = do
   describe "Alphabetically Ordered" $ do

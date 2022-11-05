@@ -9,10 +9,10 @@ seven m = calcDivisibility m 1
       | hasAtMostTwoDigits current = (current, count)
       | otherwise = calcDivisibility current (count + 1)
       where
-          current = y m
+        current = y m
 
 hasAtMostTwoDigits :: Integral a => a -> Bool
-hasAtMostTwoDigits x =  x <= 99
+hasAtMostTwoDigits x = x <= 99
 
 y :: Integral a => a -> a
 y x = firstDigits - 2 * lastDigit

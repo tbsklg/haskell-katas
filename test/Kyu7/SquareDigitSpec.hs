@@ -1,8 +1,8 @@
 module Kyu7.SquareDigitSpec where
 
 import Kyu7.SquareDigit
-import Test.QuickCheck
 import Test.Hspec
+import Test.QuickCheck
 
 spec :: Spec
 spec = do

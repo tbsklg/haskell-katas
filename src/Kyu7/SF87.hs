@@ -12,5 +12,5 @@ shuffledList l = findAt 0
         last' = last shuffle
         sumOthers = sum . init $ shuffle
         others = init shuffle
-        
+
         shuffle = take (length l) . drop i . cycle $ l

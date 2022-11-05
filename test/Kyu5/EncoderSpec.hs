@@ -1,7 +1,7 @@
 module Kyu5.EncoderSpec where
 
 import Kyu5.Encoder (compress)
-import Test.Hspec ( shouldBe, it, Spec )
+import Test.Hspec (Spec, it, shouldBe)
 
 spec :: Spec
 spec = do

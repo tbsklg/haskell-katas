@@ -1,7 +1,7 @@
 module Kyu7.SwapSpec where
 
-import Test.Hspec
 import Kyu7.Swap
+import Test.Hspec
 
 -- `spec` of type `Spec` must exist
 spec :: Spec

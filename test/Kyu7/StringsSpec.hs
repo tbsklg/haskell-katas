@@ -4,6 +4,7 @@ import Kyu7.Strings (doubleCheck)
 import Test.Hspec
 
 main = hspec spec
+
 spec = do
   describe "doubleCheck" $ do
     it "works for some examples" $ do

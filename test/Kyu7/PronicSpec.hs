@@ -1,5 +1,5 @@
 module Kyu7.PronicSpec where
-    
+
 import Kyu7.Pronic (isPronic)
 import Test.Hspec
 import Test.Hspec.QuickCheck
@@ -17,10 +17,10 @@ spec = do
     testIsPronic 6 True
     testIsPronic (-3) False
     testIsPronic (-27) False
-    
+
     prop "returns True on pronic numbers" $ \(Positive x) ->
       isPronic $ x * (x + 1)
-  
-testIsPronic :: Integer -> Bool -> Spec             
-testIsPronic n t = 
+
+testIsPronic :: Integer -> Bool -> Spec
+testIsPronic n t =
   it ("returns " ++ show t ++ " on " ++ show n) $ isPronic n === t

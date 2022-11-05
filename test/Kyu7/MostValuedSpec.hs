@@ -10,4 +10,4 @@ spec = do
       solve "aa" `shouldBe` 'a'
       solve "bcd" `shouldBe` 'b'
       solve "axyzxyz" `shouldBe` 'x'
-      solve "aabccc" `shouldBe` 'c' 
+      solve "aabccc" `shouldBe` 'c'

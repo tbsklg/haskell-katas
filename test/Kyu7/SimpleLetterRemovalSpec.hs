@@ -1,4 +1,5 @@
 module Kyu7.SimpleLetterRemovalSpec where
+
 import Kyu7.SimpleLetterRemoval
 import Test.Hspec
 

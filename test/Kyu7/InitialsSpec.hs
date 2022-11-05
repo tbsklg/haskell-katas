@@ -1,8 +1,8 @@
 module Kyu7.InitialsSpec where
 
 import Kyu7.Initials
-import Test.QuickCheck
 import Test.Hspec
+import Test.QuickCheck
 
 spec :: Spec
 spec = do

@@ -1,8 +1,8 @@
 module Kyu7.LeetSpeakSpec where
 
 import Kyu7.LeetSpeak
-import Test.QuickCheck
 import Test.Hspec
+import Test.QuickCheck
 
 spec :: Spec
 spec = do

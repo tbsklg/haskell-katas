@@ -1,6 +1,7 @@
-module Kyu7.FailedFilter (
-  filterNumbers
-  ) where
+module Kyu7.FailedFilter
+  ( filterNumbers,
+  )
+where
 
 import Data.Char (isAlpha)
 

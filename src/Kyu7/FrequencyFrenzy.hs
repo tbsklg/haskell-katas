@@ -1,7 +1,7 @@
 module Kyu7.FrequencyFrenzy where
 
-import qualified Data.Map as M
 import Data.List (sortOn)
+import qualified Data.Map as M
 
 frequency :: Ord a => [a] -> [(a, Int)]
 frequency = sortOn fst . M.toList . foldl (\y x -> M.insertWith (+) x 1 y) M.empty

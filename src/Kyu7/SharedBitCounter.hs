@@ -3,7 +3,7 @@ module Kyu7.SharedBitCounter (sharedBits) where
 import Data.Bits ((.&.))
 
 sharedBits :: Int -> Int -> Bool
-sharedBits a b = (<) 1  . length . filter (==1) . decToBin $ (a .&. b)
+sharedBits a b = (<) 1 . length . filter (== 1) . decToBin $ (a .&. b)
 
 decToBin :: Integral a => a -> [a]
 decToBin 0 = []

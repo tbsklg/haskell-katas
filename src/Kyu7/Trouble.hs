@@ -6,5 +6,5 @@ trouble xs n = filterTrouble xs
     filterTrouble [] = []
     filterTrouble [x] = [x]
     filterTrouble (x : y : ys)
-      | x + y == n = filterTrouble (x: ys)
+      | x + y == n = filterTrouble (x : ys)
       | otherwise = x : filterTrouble (y : ys)

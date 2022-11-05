@@ -12,5 +12,5 @@ slice :: (Ord a, Num a) => [a] -> [a]
 slice [] = []
 slice [x] = []
 slice (x : xs)
-  | negatives (x:xs) > 1 && x < 0 = sum (takeWhile (>= 0) xs) : slice (dropWhile (> 0) xs)
+  | negatives (x : xs) > 1 && x < 0 = sum (takeWhile (>= 0) xs) : slice (dropWhile (> 0) xs)
   | otherwise = slice (dropWhile (> 0) xs)

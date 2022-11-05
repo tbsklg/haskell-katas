@@ -1,11 +1,11 @@
 module Kyu7.Kata3Spec where
 
-import Test.Hspec
 import Kyu7.Kata3
+import Test.Hspec
 
 spec :: Spec
 spec = do
-  describe "Example Tests" $ 
+  describe "Example Tests" $
     it "should work with example tests" $ do
       fizzBuzzCuckooClock "13:34" `shouldBe` "tick"
       fizzBuzzCuckooClock "21:00" `shouldBe` "Cuckoo Cuckoo Cuckoo Cuckoo Cuckoo Cuckoo Cuckoo Cuckoo Cuckoo"

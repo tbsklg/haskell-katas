@@ -4,6 +4,7 @@ import Kyu7.Kata4 (mean)
 import Test.Hspec
 
 main = hspec spec
+
 spec =
   describe "Example Tests" $
     it "should work with example tests" $ do

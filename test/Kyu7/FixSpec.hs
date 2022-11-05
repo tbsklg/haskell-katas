@@ -1,16 +1,16 @@
 module Kyu7.FixSpec where
 
-import Test.Hspec
-import Test.HUnit
 import Kyu7.Fix
+import Test.HUnit
+import Test.Hspec
 
 myTest s exp = do
   assertEqual msg exp actual
-  where 
+  where
     actual = fix' s
     msg = "Failed at: " ++ showArgs
     showArgs = s
-    
+
 spec :: Spec
 spec = do
   describe "Fixed tests" $ do
@@ -40,6 +40,6 @@ spec = do
       myTest "inconceivable. you keep using that word. i do not think it means what you think it means." "Inconceivable. You keep using that word. I do not think it means what you think it means."
       myTest "im good. thanks. how about you." "Im good. Thanks. How about you."
       myTest "rodents of unusual size. i dont think they exist. agdhsfjhjsdf." "Rodents of unusual size. I dont think they exist. Agdhsfjhjsdf."
-  
+
 -- the following line is optional for 8.2
 main = hspec spec

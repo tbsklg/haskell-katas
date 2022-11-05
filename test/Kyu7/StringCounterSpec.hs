@@ -1,7 +1,7 @@
 module Kyu7.StringCounterSpec where
-    
-import Test.Hspec
+
 import Kyu7.StringCounter
+import Test.Hspec
 
 spec :: Spec
 spec = do

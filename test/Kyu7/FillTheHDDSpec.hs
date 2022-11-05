@@ -1,7 +1,7 @@
 module Kyu7.FillTheHDDSpec (spec) where
 
-import Test.Hspec
 import Kyu7.FillTheHDD (save)
+import Test.Hspec
 
 spec :: Spec
 spec = do

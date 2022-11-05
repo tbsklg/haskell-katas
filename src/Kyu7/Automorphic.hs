@@ -6,7 +6,7 @@ automorphic i
   | otherwise = not'
 
 automorphic' :: [Char]
-automorphic' = "Automorphic"    
+automorphic' = "Automorphic"
 
 not' :: [Char]
 not' = "Not!!"

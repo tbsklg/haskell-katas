@@ -1,19 +1,19 @@
 module Kyu7.Funcij where
 
 sumin :: Integer -> Integer
-sumin i = sum $ map(uncurry f) (table i)
+sumin i = sum $ map (uncurry f) (table i)
 
 f :: Integer -> Integer -> Integer
 f = min
 
 sumax :: Integer -> Integer
-sumax i = sum $ map(uncurry g) (table i)
+sumax i = sum $ map (uncurry g) (table i)
 
 g :: Integer -> Integer -> Integer
 g = max
 
 sumsum :: Integer -> Integer
-sumsum i = sum $ map(uncurry h) (table i)
+sumsum i = sum $ map (uncurry h) (table i)
 
 h :: Integer -> Integer -> Integer
 h x y = x + y

@@ -17,4 +17,5 @@ spec = do
     -- take (length/2) ?
     it "returns \"aa\" for \"aaaa\"" $ testit "aaaa" `shouldBe` "aa"
     it "returns \"aaa\" for \"aaaaaa\"" $ testit "aaaaaa" `shouldBe` "aaa"
-    -- try "Submit" to find more...
+
+-- try "Submit" to find more...

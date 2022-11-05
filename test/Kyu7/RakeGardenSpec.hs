@@ -1,7 +1,7 @@
 module Kyu7.RakeGardenSpec where
 
-import Test.Hspec
 import Kyu7.RakeGarden (rakeGarden)
+import Test.Hspec
 
 spec :: Spec
 spec = do

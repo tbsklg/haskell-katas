@@ -1,9 +1,8 @@
 module Kyu7.LengthRecursivelySpec where
 
 import Kyu7.LengthRecursively
-
-import Test.QuickCheck
 import Test.Hspec
+import Test.QuickCheck
 
 spec :: Spec
 spec = do

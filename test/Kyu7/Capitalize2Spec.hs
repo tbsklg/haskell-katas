@@ -1,5 +1,5 @@
 module Kyu7.Capitalize2Spec where
-    
+
 import Kyu7.Capitalize2
 import Test.Hspec
 

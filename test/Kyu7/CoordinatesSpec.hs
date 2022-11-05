@@ -1,8 +1,8 @@
 module Kyu7.CoordinatesSpec where
 
+import Codewars
 import Kyu7.Coordinates (coordinates)
 import Test.Hspec
-import Codewars
 
 (a, b) ?~= (c, d) = do
   a `shouldBeApprox` c

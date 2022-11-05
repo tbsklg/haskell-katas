@@ -1,19 +1,17 @@
 module Kyu7.NextHappyYearSpec where
 
-import Test.Hspec
 import Kyu7.NextHappyYear
-
-
 import Test.HUnit (assertEqual)
+import Test.Hspec
 
 myTest n exp = do
---  print $ "Looking for: " ++ show exp
+  --  print $ "Looking for: " ++ show exp
   assertEqual msg exp actual
-  where 
+  where
     actual = nextHappyYear n
     msg = "Failed at: " ++ showArgs
     showArgs = show n
-    
+
 spec :: Spec
 spec = do
   it "Basic tests" $ do

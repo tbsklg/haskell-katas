@@ -14,8 +14,8 @@ cardGame cards = (+) (fst . alice $ cards) . cardGame . remaining $ cards
 
     alice = strategy
     bob = strategy
-    
-    strategy 0 = (0,0) :: Move
+
+    strategy 0 = (0, 0) :: Move
     strategy x
       | even x && (odd (x - x `div` 2) || x == 4) = (x `div` 2, x `div` 2) :: Move
-      | otherwise = (1, x - 1) :: Move  
+      | otherwise = (1, x - 1) :: Move

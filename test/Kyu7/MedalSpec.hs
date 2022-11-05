@@ -1,9 +1,8 @@
-module Kyu7.MedalSpec where 
-
-import Test.Hspec
-import Test.QuickCheck
+module Kyu7.MedalSpec where
 
 import Kyu7.Medal
+import Test.Hspec
+import Test.QuickCheck
 
 -- `spec` of type `Spec` must exist
 spec :: Spec
@@ -19,5 +18,5 @@ spec = do
     evilCodeMedal "99:59:58" "99:59:57" "99:59:58" "99:59:59" `shouldBe` Just "Bronze"
     evilCodeMedal "14:49:03" "77:39:08" "92:11:36" "94:07:41" `shouldBe` Just "Gold"
     evilCodeMedal "61:01:40" "64:19:53" "79:30:02" "95:24:48" `shouldBe` Just "Gold"
-  
+
 main = hspec spec

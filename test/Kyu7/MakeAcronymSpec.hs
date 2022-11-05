@@ -9,5 +9,5 @@ spec = do
   describe "The toAcronym function" $ do
     it "should work for some examples" $ do
       toAcronym "Code Wars" `shouldBe` "CW"
-      toAcronym "Water Closet" `shouldBe` "WC"      
+      toAcronym "Water Closet" `shouldBe` "WC"
       toAcronym "Portable Network Graphics" `shouldBe` "PNG"

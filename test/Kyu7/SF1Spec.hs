@@ -1,7 +1,7 @@
 module Kyu7.SF1Spec where
 
-import Test.Hspec
 import Kyu7.SF1
+import Test.Hspec
 
 -- `spec` of type `Spec` must exist
 spec :: Spec

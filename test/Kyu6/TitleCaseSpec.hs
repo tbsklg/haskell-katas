@@ -1,4 +1,5 @@
 module Kyu6.TitleCaseSpec where
+
 import Kyu6.TitleCase
 import Test.Hspec
 

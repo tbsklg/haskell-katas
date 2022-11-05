@@ -1,7 +1,7 @@
 module Kyu7.WomansAgeSpec (spec) where
 
-import Test.Hspec
 import Kyu7.WomansAge (womensAge)
+import Test.Hspec
 
 spec :: Spec
 spec = do

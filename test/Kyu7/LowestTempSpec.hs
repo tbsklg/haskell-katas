@@ -1,7 +1,7 @@
 module Kyu7.LowestTempSpec where
-import Test.Hspec
-import Kyu7.LowestTemp (lowestTemp)
 
+import Kyu7.LowestTemp (lowestTemp)
+import Test.Hspec
 
 spec :: Spec
 spec = do

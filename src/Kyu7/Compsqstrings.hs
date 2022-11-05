@@ -21,7 +21,6 @@ newLine = "\n"
 composeAt :: Int -> String -> String -> String
 composeAt n s1 s2 = take n s1 ++ take (length s2 - n + 1) s2
 
-
 -- compose :: String -> String -> String
 -- compose s1 s2 = intercalate "\n" $ zipWith (++) (toTriangle s1) (reverse $ toTriangle s2) where
 --   toTriangle = zipWith take [1..] . lines

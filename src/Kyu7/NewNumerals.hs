@@ -1,6 +1,6 @@
 module Kyu7.NewNumerals where
 
-import Data.Char (isUpper, chr)
+import Data.Char (chr, isUpper)
 import Text.Printf (printf)
 
 newNumeralSystem :: Char -> [String]

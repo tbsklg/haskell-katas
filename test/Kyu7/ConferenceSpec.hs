@@ -1,7 +1,6 @@
 module Kyu7.ConferenceSpec where
 
 import Kyu7.Conference (conferencePicker)
-
 import Test.Hspec
 import Test.QuickCheck
 

@@ -1,15 +1,14 @@
 module Kyu7.FunreverseSpec where
 
-import Kyu7.Funreverse (reverseFun)  
-
+import Kyu7.Funreverse (reverseFun)
 import Test.Hspec
 import Test.QuickCheck
 import Text.Printf (printf)
 
 testFun :: String -> String -> Spec
-testFun s u = 
-    it (printf "should return reverseFun for s : %s " s) $
-        reverseFun s `shouldBe` u
+testFun s u =
+  it (printf "should return reverseFun for s : %s " s) $
+    reverseFun s `shouldBe` u
 
 spec :: Spec
 spec = do

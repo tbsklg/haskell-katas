@@ -1,7 +1,7 @@
 module Kyu7.RangeBitCountingSpec (spec) where
 
+import Kyu7.RangeBitCounting (rangeBitCount)
 import Test.Hspec
-import Kyu7.RangeBitCounting (rangeBitCount )
 
 spec :: Spec
 spec = do

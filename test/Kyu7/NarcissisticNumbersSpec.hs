@@ -1,4 +1,5 @@
 module Kyu7.NarcissisticNumbersSpec where
+
 import Kyu7.NarcissisticNumbers
 import Test.Hspec
 

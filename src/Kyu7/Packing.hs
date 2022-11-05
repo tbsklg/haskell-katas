@@ -4,7 +4,7 @@ arrayPacking :: [Integer] -> Integer
 arrayPacking = bintodec . concatMap (eightBit . binary) . reverse
 
 bintodec :: [Integer] -> Integer
-bintodec = foldr (\(i,x) y -> y + x * 2 ^ i) 0 . zip [0,1 ..] . reverse
+bintodec = foldr (\(i, x) y -> y + x * 2 ^ i) 0 . zip [0, 1 ..] . reverse
 
 eightBit :: Num a => [a] -> [a]
 eightBit xs = replicate (8 - length xs) 0 ++ xs

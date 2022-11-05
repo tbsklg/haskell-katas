@@ -1,4 +1,4 @@
-module Kyu7.ArrayParity where 
+module Kyu7.ArrayParity where
 
 import Data.List (nub)
 

@@ -1,7 +1,7 @@
 module Kyu6.Deletion where
 
-import Data.List (sortOn, groupBy)
-import Data.Function ( on )
+import Data.Function (on)
+import Data.List (groupBy, sortOn)
 
 deleteNth :: [Int] -> Int -> [Int]
 deleteNth xs n =

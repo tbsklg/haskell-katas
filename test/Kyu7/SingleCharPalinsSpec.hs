@@ -1,4 +1,5 @@
 module Kyu7.SingleCharPalinsSpec where
+
 import Kyu7.SingleCharPalins
 import Test.Hspec
 

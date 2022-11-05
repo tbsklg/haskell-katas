@@ -1,8 +1,11 @@
 module Kyu7.DrawRectangle where
 
 type Pixel = Char
+
 type Canvas = [[Pixel]]
+
 type Point = (Int, Int)
+
 type Rectangle = (Point, Point)
 
 drawRectangle :: Canvas -> Rectangle -> Canvas

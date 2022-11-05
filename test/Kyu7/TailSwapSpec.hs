@@ -1,6 +1,7 @@
 module Kyu7.TailSwapSpec where
-import Test.Hspec
+
 import Kyu7.TailSwap
+import Test.Hspec
 
 spec :: Spec
 spec = do

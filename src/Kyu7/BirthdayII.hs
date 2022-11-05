@@ -5,7 +5,9 @@ import Data.List (sort)
 import Text.Printf (printf)
 
 data Present = Goodpresent | Crap | Empty | Bang | Badpresent | Dog deriving (Eq, Show, Enum)
+
 type Message = String
+
 type NumPasses = Int
 
 present :: Present -> NumPasses -> Message

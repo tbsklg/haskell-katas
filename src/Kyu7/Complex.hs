@@ -3,8 +3,8 @@ module Kyu7.Complex where
 data Complex = Complex Double Double
   deriving (Eq, Show)
 
-real,imaginary :: Complex -> Double
-real (Complex a _) = a 
+real, imaginary :: Complex -> Double
+real (Complex a _) = a
 imaginary (Complex _ b) = b
 
 -- You are not required to provide a full working instance

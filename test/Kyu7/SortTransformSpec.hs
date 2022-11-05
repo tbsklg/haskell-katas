@@ -1,18 +1,17 @@
 module Kyu7.SortTransformSpec where
 
-import Test.Hspec
 import Kyu7.SortTransform
-
 import Test.HUnit (assertEqual)
+import Test.Hspec
 
 myTest a exp = do
   print $ "Looking for: " ++ show exp
   assertEqual msg exp actual
-  where 
+  where
     actual = sortTransform a
     msg = "Failed at: " ++ showArgs
     showArgs = show a
-    
+
 spec :: Spec
 spec = do
   it "Fixed tests" $ do

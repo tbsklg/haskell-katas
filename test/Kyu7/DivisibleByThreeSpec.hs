@@ -1,17 +1,16 @@
 module Kyu7.DivisibleByThreeSpec where
 
-import Test.Hspec
 import Kyu7.DivisibleByThree
-
 import Test.HUnit (assertEqual)
+import Test.Hspec
 
 myTest s exp = do
   assertEqual msg exp actual
-  where 
+  where
     actual = divisibleByThree s
     msg = "Failed at: " ++ showArgs
-    showArgs = s 
-    
+    showArgs = s
+
 spec :: Spec
 spec = do
   it "Fixed tests " $ do

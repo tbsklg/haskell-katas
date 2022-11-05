@@ -5,4 +5,4 @@ module Kyu7.Monotone where
 isMonotone :: Ord a => [a] -> Bool
 isMonotone [] = True
 isMonotone [x] = True
-isMonotone (x : y : ys) = x <= y && isMonotone (y:ys)
+isMonotone (x : y : ys) = x <= y && isMonotone (y : ys)

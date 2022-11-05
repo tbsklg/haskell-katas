@@ -12,4 +12,4 @@ spec = do
       checkVowel "cat" 4 `shouldBe` False
       checkVowel "Amanda" (-2) `shouldBe` False
       checkVowel "Amanda" 0 `shouldBe` True
-      checkVowel "Amanda" 2 `shouldBe` True  
+      checkVowel "Amanda" 2 `shouldBe` True

@@ -1,7 +1,7 @@
 module Kyu7.DaysRepresentedSpec where
 
-import Test.Hspec
 import Kyu7.DaysRepresented (daysRepresented)
+import Test.Hspec
 
 spec :: Spec
 spec = do

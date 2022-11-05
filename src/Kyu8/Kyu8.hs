@@ -42,7 +42,7 @@ bmi weight height
   | bmi > 30 = "Obese"
   where
     bmi = weight / height ^ 2
-    
+
 firstNonConsecutive :: (Eq a, Num a) => [a] -> Maybe a
 firstNonConsecutive (x : y : ys)
   | (x + 1) == y = firstNonConsecutive (y : ys)
@@ -857,23 +857,23 @@ round2 :: (RealFrac a1, Fractional a2) => a1 -> a2
 round2 n = fromIntegral (round (n * 10 ^ 2)) / 10 ^ 2
 
 gravity :: [Double] -> [String] -> Double
-gravity (m1 : m2 : d : _) (t1 : t2 : t3: _) = f (toKilograms m1 t1) (toKilograms m2 t2) (toMeters d t3)
+gravity (m1 : m2 : d : _) (t1 : t2 : t3 : _) = f (toKilograms m1 t1) (toKilograms m2 t2) (toMeters d t3)
 
 toMeters :: Fractional a => a -> [Char] -> a
 toMeters v u
-    | u == "μm" = v * 1e-6
-    | u == "mm" = v * 1e-3
-    | u == "cm" = v * 1e-2
-    | u == "ft" = v * 0.3048
-    | otherwise = v
+  | u == "μm" = v * 1e-6
+  | u == "mm" = v * 1e-3
+  | u == "cm" = v * 1e-2
+  | u == "ft" = v * 0.3048
+  | otherwise = v
 
 toKilograms :: Fractional a => a -> [Char] -> a
 toKilograms v u
-    | u == "μg" = v * 1e-9
-    | u == "mg" = v * 1e-6
-    | u == "g" = v * 1e-3
-    | u == "lb" = v * 0.453592
-    | otherwise = v
+  | u == "μg" = v * 1e-9
+  | u == "mg" = v * 1e-6
+  | u == "g" = v * 1e-3
+  | u == "lb" = v * 0.453592
+  | otherwise = v
 
 g :: Double
 g = 6.67 / 1e-11

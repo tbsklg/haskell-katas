@@ -1,7 +1,7 @@
 module Kyu7.KataSpec where
 
-import Test.Hspec
 import Kyu7.Kata
+import Test.Hspec
 
 spec :: Spec
 spec = do

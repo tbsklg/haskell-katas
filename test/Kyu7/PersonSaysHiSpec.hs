@@ -1,8 +1,8 @@
 module Kyu7.PersonSaysHiSpec where
 
 import Kyu7.PersonSaysHi
-import Test.QuickCheck
 import Test.Hspec
+import Test.QuickCheck
 
 spec :: Spec
 spec = do

@@ -1,8 +1,8 @@
 module Kyu7.HeronsFormulaSpec where
-    
+
 import Kyu7.HeronsFormula
-import Test.QuickCheck
 import Test.Hspec
+import Test.QuickCheck
 
 spec :: Spec
 spec = do

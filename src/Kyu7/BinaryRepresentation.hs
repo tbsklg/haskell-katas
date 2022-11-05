@@ -4,9 +4,9 @@ import Data.Int (Int32)
 
 showBits :: Int32 -> [Int32]
 showBits x
-    | x == (-2^31) = invert . bin32 $ (2^31 - 1)
-    | x < 0 = addOne . invert . bin32 . abs $ x
-    | otherwise = bin32 x
+  | x == (-2 ^ 31) = invert . bin32 $ (2 ^ 31 - 1)
+  | x < 0 = addOne . invert . bin32 . abs $ x
+  | otherwise = bin32 x
 
 addOne :: [Int32] -> [Int32]
 addOne xs = reverse . go . reverse $ xs

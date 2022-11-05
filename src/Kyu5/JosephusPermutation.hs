@@ -3,9 +3,9 @@ module Kyu5.JosephusPermutation where
 josephus :: [a] -> Int -> [a]
 josephus [] _ = []
 josephus xs k = survivor : josephus remaining k
-    where
-        survivor = fst . dropNth k $ xs
-        remaining = snd . dropNth k $ xs
+  where
+    survivor = fst . dropNth k $ xs
+    remaining = snd . dropNth k $ xs
 
 dropNth :: Int -> [a] -> (a, [a])
 dropNth n xs = (xs !! (at - 1), drop at xs ++ take (at - 1) xs)

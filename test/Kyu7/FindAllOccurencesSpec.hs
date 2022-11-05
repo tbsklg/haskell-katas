@@ -4,7 +4,7 @@ import Kyu7.FindAllOccurences (findAll)
 import Test.Hspec
 
 spec = do
-  describe "Find All" $ do 
+  describe "Find All" $ do
     it "should work for simple tests" $ do
       findAll [6, 9, 3, 4, 3, 82, 11] 3 `shouldBe` [2, 4]
       findAll [10, 16, 20, 6, 14, 11, 20, 2, 17, 16, 14] 16 `shouldBe` [1, 9]

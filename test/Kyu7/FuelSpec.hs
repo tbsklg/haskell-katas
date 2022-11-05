@@ -1,7 +1,7 @@
 module Kyu7.FuelSpec where
 
-import Test.Hspec
 import Kyu7.Fuel
+import Test.Hspec
 
 spec :: Spec
 spec = do

@@ -1,4 +1,5 @@
 module Kyu7.SimpleRotatedPalinSpec where
+
 import Kyu7.SimpleRotatedPalin
 import Test.Hspec
 

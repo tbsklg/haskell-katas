@@ -1,7 +1,7 @@
 module Kyu7.CreditCardIssuerSpec where
 
-import Test.Hspec
 import Kyu7.CreditCardIssuer
+import Test.Hspec
 
 spec :: Spec
 spec = do

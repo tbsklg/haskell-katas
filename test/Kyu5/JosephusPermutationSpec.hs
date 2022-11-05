@@ -1,8 +1,8 @@
 module Kyu5.JosephusPermutationSpec where
-import Test.Hspec
-import Test.QuickCheck
 
 import Kyu5.JosephusPermutation (josephus)
+import Test.Hspec
+import Test.QuickCheck
 
 spec :: Spec
 spec = do

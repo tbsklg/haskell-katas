@@ -1,7 +1,6 @@
 module Kyu7.ArraySortSpec where
 
 import Kyu7.ArraySort
-
 import Test.Hspec
 
 spec :: Spec

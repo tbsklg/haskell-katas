@@ -1,7 +1,7 @@
 module Kyu7.TetrisSpec where
 
-import Test.Hspec
 import Kyu7.Tetris
+import Test.Hspec
 
 spec :: Spec
 spec = do

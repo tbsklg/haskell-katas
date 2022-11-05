@@ -1,7 +1,7 @@
 module Kyu6.MirrorSpec where
 
-import Test.Hspec
 import Kyu6.Mirror
+import Test.Hspec
 
 spec :: Spec
 spec = do

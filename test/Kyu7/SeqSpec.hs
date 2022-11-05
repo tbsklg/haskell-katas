@@ -1,10 +1,10 @@
 module Kyu7.SeqSpec where
 
-import Test.Hspec
-import Test.HUnit (assertEqual)
 import Kyu7.Seq
+import Test.HUnit (assertEqual)
+import Test.Hspec
 
-test s exp = assertEqual ("Failed at: " ++ s) exp (alphaSeq s) 
+test s exp = assertEqual ("Failed at: " ++ s) exp (alphaSeq s)
 
 spec :: Spec
 spec = do
@@ -15,7 +15,6 @@ spec = do
     test "MjtkuBovqrU" "Bb,Jjjjjjjjjj,Kkkkkkkkkkk,Mmmmmmmmmmmmm,Ooooooooooooooo,Qqqqqqqqqqqqqqqqq,Rrrrrrrrrrrrrrrrrr,Tttttttttttttttttttt,Uuuuuuuuuuuuuuuuuuuuu,Uuuuuuuuuuuuuuuuuuuuu,Vvvvvvvvvvvvvvvvvvvvvv"
     test "EvidjUnokmM" "Dddd,Eeeee,Iiiiiiiii,Jjjjjjjjjj,Kkkkkkkkkkk,Mmmmmmmmmmmmm,Mmmmmmmmmmmmm,Nnnnnnnnnnnnnn,Ooooooooooooooo,Uuuuuuuuuuuuuuuuuuuuu,Vvvvvvvvvvvvvvvvvvvvvv"
     test "HbideVbxncC" "Bb,Bb,Ccc,Ccc,Dddd,Eeeee,Hhhhhhhh,Iiiiiiiii,Nnnnnnnnnnnnnn,Vvvvvvvvvvvvvvvvvvvvvv,Xxxxxxxxxxxxxxxxxxxxxxxx"
-  
-  
+
 -- the following line is optional for 8.2
 main = hspec spec

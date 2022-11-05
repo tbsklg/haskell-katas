@@ -1,7 +1,7 @@
 module Kyu5.ParenthesesSpec where
 
 import Kyu5.Parentheses (validParentheses)
-import Test.Hspec ( describe, it, shouldBe, Spec )
+import Test.Hspec (Spec, describe, it, shouldBe)
 
 spec :: Spec
 spec = do

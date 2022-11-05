@@ -18,6 +18,6 @@ digits :: Integral x => x -> [x]
 digits 0 = []
 digits x = digits (x `div` 10) ++ [x `mod` 10]
 
--- strong n 
+-- strong n
 --   | n == (sum $ map (\d -> product [1..digitToInt d]) $ show n) = "STRONG!!!!"
 --   | otherwise = "Not Strong !!"

@@ -1,7 +1,7 @@
 module Kyu7.ValuesSpec where
 
-import Test.Hspec
 import Kyu7.Values
+import Test.Hspec
 
 spec :: Spec
 spec = do

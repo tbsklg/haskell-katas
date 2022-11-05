@@ -1,4 +1,5 @@
 module Kyu7.FixCodeSpec where
+
 import Kyu7.FixCode
 import Test.Hspec
 

@@ -13,4 +13,5 @@ spec = do
     -- a * b ?
     it "returns 1 for 1 1" $ testit 1 1 `shouldBe` 1
     it "returns 3 for 1 3" $ testit 1 3 `shouldBe` 3
-    -- try "Attempt" to find more...
+
+-- try "Attempt" to find more...

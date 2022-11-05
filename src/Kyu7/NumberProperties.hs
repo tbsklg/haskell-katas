@@ -1,6 +1,7 @@
 module Kyu7.NumberProperties where
 
-data Property = Property Bool   Bool  Bool deriving (Show, Eq)
+data Property = Property Bool Bool Bool deriving (Show, Eq)
+
 --                       prime  even  10*
 
 numberProperty :: Integral n => n -> Property

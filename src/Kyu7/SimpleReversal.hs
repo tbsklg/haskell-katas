@@ -9,4 +9,3 @@ solve l = reverseWithWhitespaces l (filter (/= ' ') l)
     reverseWithWhitespaces (x : xs) l
       | x == ' ' = " " ++ reverseWithWhitespaces xs l
       | otherwise = last l : reverseWithWhitespaces xs (init l)
-    

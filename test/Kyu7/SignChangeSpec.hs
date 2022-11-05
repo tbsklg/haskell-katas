@@ -8,4 +8,4 @@ spec = do
     count [1, 3, 4, 5] `shouldBe` 0
     count [1, -3, -4, 0, 5] `shouldBe` 2
     count [] `shouldBe` 0
-    count [-47,84,-30,-11,-5,74,77] `shouldBe` 3
+    count [-47, 84, -30, -11, -5, 74, 77] `shouldBe` 3

@@ -1,7 +1,7 @@
 module Kyu7.WordsToMarkSpec (spec) where
 
-import Test.Hspec
 import Kyu7.WordsToMark (wordsToMarks)
+import Test.Hspec
 
 spec :: Spec
 spec = do

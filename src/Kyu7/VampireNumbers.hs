@@ -3,10 +3,10 @@ module Kyu7.VampireNumbers where
 import Data.List (sort)
 
 isVampire :: Integer -> Integer -> Bool
-isVampire a b = (a > 0 || b > 0) && sameDigits 
+isVampire a b = (a > 0 || b > 0) && sameDigits
   where
     sameDigits = sort (a' ++ b') == sort c'
-    
+
     a' = digits a
     b' = digits b
     c' = digits (a * b)

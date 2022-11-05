@@ -1,6 +1,6 @@
 module Kyu7.LikesVsDislikesSpec (spec) where
 
-import Kyu7.LikesVsDislikes (likeOrDislike, Like(..))
+import Kyu7.LikesVsDislikes (Like (..), likeOrDislike)
 import Test.Hspec
 
 spec :: Spec

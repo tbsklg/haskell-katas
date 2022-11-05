@@ -1,5 +1,5 @@
 module Kyu7.FixStringSpec where
-    
+
 import Kyu7.FixString
 import Test.Hspec
 

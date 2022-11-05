@@ -1,8 +1,8 @@
 module Kyu7.WillSpec where
 
+import Kyu7.Will
 import Test.Hspec
 import Test.QuickCheck
-import Kyu7.Will
 
 -- `spec` of type `Spec` must exist
 spec :: Spec
@@ -13,6 +13,6 @@ spec = do
     willYou False False False `shouldBe` False
     willYou False False True `shouldBe` True
     willYou False True False `shouldBe` False
-    
+
 -- the following line is optional for 8.2
 main = hspec spec

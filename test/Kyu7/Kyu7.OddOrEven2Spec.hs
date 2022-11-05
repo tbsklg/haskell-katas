@@ -1,6 +1,6 @@
 module Kyu7.OddOrEven2Spec (spec) where
 
-import Kyu7.OddOrEven2 (Parity(..), oddOrEven)
+import Kyu7.OddOrEven2 (Parity (..), oddOrEven)
 import Test.Hspec
 
 spec :: Spec

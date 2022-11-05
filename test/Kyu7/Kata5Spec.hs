@@ -9,4 +9,4 @@ spec = do
     it "should work with example tests" $ do
       longest ["simple", "is", "better", "than", "complex"] `shouldBe` 7
       longest ["explicit", "is", "better", "than", "implicit"] `shouldBe` 8
-      longest ["beautiful", "is", "better", "than", "ugly"] `shouldBe` 9      
+      longest ["beautiful", "is", "better", "than", "ugly"] `shouldBe` 9

@@ -1,6 +1,6 @@
 module Kyu7.LondonCityHackerSpec (spec) where
 
-import Kyu7.LondonCityHacker (Journey(..), londonCityHacker)
+import Kyu7.LondonCityHacker (Journey (..), londonCityHacker)
 import Test.Hspec
 
 spec :: Spec

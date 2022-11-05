@@ -1,9 +1,8 @@
 module Kyu7.MinimumPerimeterSpec where
 
+import Kyu7.MinimumPerimeter
 import Test.Hspec
 import Test.QuickCheck
-
-import Kyu7.MinimumPerimeter
 
 spec :: Spec
 spec = do

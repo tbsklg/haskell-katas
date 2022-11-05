@@ -22,4 +22,3 @@ spec = do
       getLastDigit 193241 `shouldBe` 1
       getLastDigit 79 `shouldBe` 1
       getLastDigit 270 `shouldBe` 0
-    

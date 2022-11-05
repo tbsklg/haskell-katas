@@ -16,5 +16,5 @@ productFib n = findNumbers fibonacciNumbers
 
 fibonacciNumbers :: [Integer]
 fibonacciNumbers = 0 : go
-    where
-        go = 1 : 1 : zipWith (+) go (tail go)
+  where
+    go = 1 : 1 : zipWith (+) go (tail go)

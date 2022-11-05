@@ -24,10 +24,10 @@ mostValuable (c, a) (c', b)
   | otherwise = GT
 
 alpha :: Ord a => a -> a -> Ordering
-alpha a b 
-    | a < b = GT
-    | otherwise = LT
+alpha a b
+  | a < b = GT
+  | otherwise = LT
 
--- solve :: String -> Char 
+-- solve :: String -> Char
 -- solve xs = snd $ minimum $ map charVal xs
 --   where charVal x = (liftA2 (-) head last (elemIndices x xs), x)

@@ -1,10 +1,11 @@
 module Kyu7.BinaryTreeSearchSpec (spec) where
 
-import Kyu7.BinaryTreeSearch (search, Tree(..))
+import Kyu7.BinaryTreeSearch (Tree (..), search)
 import Test.Hspec
 import Test.QuickCheck
 
 main = hspec spec
+
 spec = do
   describe "The search function" $ do
     it "should work for some examples" $ do

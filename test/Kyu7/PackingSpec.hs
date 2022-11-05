@@ -1,7 +1,7 @@
 module Kyu7.PackingSpec where
 
-import Test.Hspec
 import Kyu7.Packing
+import Test.Hspec
 
 spec :: Spec
 spec = do

@@ -1,6 +1,6 @@
 module Kyu7.OperationsSpec where
-import Kyu7.Operations
 
+import Kyu7.Operations
 import Test.Hspec
 
 spec :: Spec

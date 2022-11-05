@@ -1,6 +1,6 @@
 module Kyu7.RockPaperScissorsLizardSpockSpec (spec) where
 
-import Kyu7.RockPaperScissorsLizardSpock (RPSLS(..), rpsls)
+import Kyu7.RockPaperScissorsLizardSpock (RPSLS (..), rpsls)
 import Test.Hspec
 
 spec :: Spec

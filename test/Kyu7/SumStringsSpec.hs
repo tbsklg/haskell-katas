@@ -1,5 +1,5 @@
 module Kyu7.SumStringsSpec where
-    
+
 import Kyu7.SumStrings
 import Test.Hspec
 

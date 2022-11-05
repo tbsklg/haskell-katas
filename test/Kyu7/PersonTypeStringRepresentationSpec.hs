@@ -1,7 +1,8 @@
 module Kyu7.PersonTypeStringRepresentationSpec where
+
 import Kyu7.PersonTypeStringRepresentation
-import Test.QuickCheck
 import Test.Hspec
+import Test.QuickCheck
 
 spec :: Spec
 spec = do

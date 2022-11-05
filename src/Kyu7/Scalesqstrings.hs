@@ -1,14 +1,14 @@
 module Kyu7.Scalesqstrings where
 
-import Data.List.Split
 import Data.List (intercalate)
+import Data.List.Split
 
 scale :: [Char] -> Int -> Int -> [Char]
-scale strng k n = transform $ splitOn "\n" strng 
-    where
-        transform [] = []
-        transform [x] = vScale (hScale x k) n
-        transform (x:xs) = vScale (hScale x k) n ++ newLine ++ transform xs
+scale strng k n = transform $ splitOn "\n" strng
+  where
+    transform [] = []
+    transform [x] = vScale (hScale x k) n
+    transform (x : xs) = vScale (hScale x k) n ++ newLine ++ transform xs
 
 hScale :: [Char] -> Int -> [Char]
 hScale [] _ = []

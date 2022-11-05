@@ -1,6 +1,6 @@
-module Kyu7.RockPaperScissorsLizardSpock (RPSLS(..), rpsls) where
+module Kyu7.RockPaperScissorsLizardSpock (RPSLS (..), rpsls) where
 
-data RPSLS = Rock | Paper | Scissors | Lizard | Spock deriving (Show,Eq)
+data RPSLS = Rock | Paper | Scissors | Lizard | Spock deriving (Show, Eq)
 
 rpsls :: RPSLS -> RPSLS -> Ordering
 rpsls Rock Lizard = GT

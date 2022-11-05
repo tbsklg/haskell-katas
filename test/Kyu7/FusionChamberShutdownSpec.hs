@@ -1,7 +1,7 @@
 module Kyu7.FusionChamberShutdownSpec where
 
-import Test.Hspec
 import Kyu7.FusionChamberShutdown (burner)
+import Test.Hspec
 
 spec :: Spec
 spec = do

@@ -1,4 +1,5 @@
 module Kyu7.GeneratePairsSpec where
+
 import Kyu7.GeneratePairs
 import Test.Hspec
 

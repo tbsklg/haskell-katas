@@ -1,17 +1,16 @@
 module Kyu7.ShortestDistanceSpec where
 
-import Test.Hspec
 import Kyu7.ShortestDistance (shortestDistance)
+import Test.Hspec
 
 epsilon = 1e-9
 
 approximates :: Double -> Double -> Bool
 actual `approximates` 0 = abs actual < epsilon
-actual `approximates` expected = abs (expected-actual) < epsilon * abs expected
+actual `approximates` expected = abs (expected - actual) < epsilon * abs expected
 
 shouldApproximatelyBe :: Double -> Double -> Expectation
 actual `shouldApproximatelyBe` expected = actual `shouldSatisfy` (`approximates` expected)
-
 
 spec :: Spec
 spec = do

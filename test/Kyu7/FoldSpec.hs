@@ -1,7 +1,7 @@
 module Kyu7.FoldSpec where
 
-import Kyu7.Fold (foldTo)
 import Data.Maybe (isJust, isNothing)
+import Kyu7.Fold (foldTo)
 import Test.Hspec
 import Test.QuickCheck
 

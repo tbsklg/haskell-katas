@@ -1,9 +1,9 @@
 module Kyu7.MaxProduct2Spec where
 
-import Test.Hspec
 import Kyu7.MaxProduct2
-
 import Test.HUnit (assertEqual)
+import Test.Hspec
+
 test ns exp = assertEqual ("Failed at: " ++ show ns) exp (maximumProduct ns)
 
 spec :: Spec

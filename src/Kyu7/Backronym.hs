@@ -1,7 +1,7 @@
 module Kyu7.Backronym where
 
-import Data.Maybe (fromJust)
 import Data.Char (toUpper)
+import Data.Maybe (fromJust)
 
 dict :: Char -> String
 dict 'A' = "awesome"

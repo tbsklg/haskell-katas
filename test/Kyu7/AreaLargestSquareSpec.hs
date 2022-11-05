@@ -1,7 +1,7 @@
 module Kyu7.AreaLargestSquareSpec where
 
-import Test.Hspec
 import Kyu7.AreaLargestSquare (areaLargestSquare)
+import Test.Hspec
 
 spec :: Spec
 spec = do

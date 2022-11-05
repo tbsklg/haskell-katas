@@ -13,7 +13,7 @@ withCheckDigit s = (++) s . checkDigit $ s
 
 checkDigit :: String -> String
 checkDigit =
-    show
+  show
     . checkDigit'
     . flip mod 10
     . sum

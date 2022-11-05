@@ -1,4 +1,4 @@
-module Kyu7.ProductOrSum (productOrSum, ProductOrSum(..)) where
+module Kyu7.ProductOrSum (productOrSum, ProductOrSum (..)) where
 
 import Data.List (sort)
 

@@ -1,8 +1,8 @@
 module Kyu7.PandemiaSpec (spec) where
 
+import Codewars
 import Kyu7.Pandemia (infected)
 import Test.Hspec
-import Codewars
 
 spec :: Spec
 spec = do

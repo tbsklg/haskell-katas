@@ -1,7 +1,7 @@
 module Kyu7.PlanSeatSpec (spec) where
 
-import Test.Hspec
 import Kyu7.PlanSeat (planeSeat)
+import Test.Hspec
 
 spec :: Spec
 spec = do

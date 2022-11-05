@@ -7,7 +7,7 @@ import Test.QuickCheck
 spec :: Spec
 spec = do
   describe "Simple string reversal II" $ do
-    it "Basic tests" $ do    
+    it "Basic tests" $ do
       solve "codewars" 1 5 `shouldBe` "cawedors"
       solve "codingIsFun" 2 100 `shouldBe` "conuFsIgnid"
       solve "FunctionalProgramming" 2 15 `shouldBe` "FuargorPlanoitcnmming"

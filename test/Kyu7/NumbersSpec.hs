@@ -5,6 +5,7 @@ import Test.Hspec
 import Test.QuickCheck
 
 main = hspec spec
+
 spec = do
   describe "isTriangular" $ do
     it "returns True when t is a triangular number" $ do
@@ -15,13 +16,14 @@ spec = do
       isTriangular 15 `shouldBe` True
       isTriangular 21 `shouldBe` True
       isTriangular 28 `shouldBe` True
-    
+
     it "returns False t is not a triangular number" $ do
       isTriangular 2 `shouldBe` False
       isTriangular 7 `shouldBe` False
       isTriangular 14 `shouldBe` False
       isTriangular 27 `shouldBe` False
-      
-    it "returns True for random triangular numbers" $ property $
-      forAll (fmap (\n -> n * (n + 1) `div` 2) (choose (1, 10000))) $ \t ->
-        isTriangular t `shouldBe` True
+
+    it "returns True for random triangular numbers" $
+      property $
+        forAll (fmap (\n -> n * (n + 1) `div` 2) (choose (1, 10000))) $ \t ->
+          isTriangular t `shouldBe` True

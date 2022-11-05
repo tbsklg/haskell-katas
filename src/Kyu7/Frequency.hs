@@ -1,7 +1,7 @@
 module Kyu7.Frequency where
 
-import Data.List (maximumBy, group, sort)
 import Data.Function (on)
+import Data.List (group, maximumBy, sort)
 
 mostFrequentItemCount :: [Int] -> Int
 mostFrequentItemCount [] = 0

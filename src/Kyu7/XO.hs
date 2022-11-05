@@ -9,6 +9,6 @@ import Data.List (partition)
 xo :: String -> Bool
 xo str = xLength == oLength
   where
-    xLength = length . filter (=='x') $ asLowerCase
-    oLength = length . filter (=='o') $ asLowerCase
+    xLength = length . filter (== 'x') $ asLowerCase
+    oLength = length . filter (== 'o') $ asLowerCase
     asLowerCase = map toLower str

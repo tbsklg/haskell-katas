@@ -9,13 +9,13 @@ test s1 s2 expected = it ("scramble \"" ++ s1 ++ "\" \"" ++ s2 ++ "\"") $ do
 
 spec :: Spec
 spec = describe "scramble: Basic Tests" $ do
-  test "rkqodlw"           "world"       True
-  test "cedewaraaossoqqyt" "codewars"    True
-  test "katas"             "steak"       False
-  test "scriptjavx"        "javascript"  False
-  test "scriptingjava"     "javascript"  True
-  test "scriptsjava"       "javascripts" True
-  test "javscripts"        "javascript"  False
-  test "aabbcamaomsccdd"   "commas"      True
-  test "commas"            "commas"      True
-  test "sammoc"            "commas"      True
+  test "rkqodlw" "world" True
+  test "cedewaraaossoqqyt" "codewars" True
+  test "katas" "steak" False
+  test "scriptjavx" "javascript" False
+  test "scriptingjava" "javascript" True
+  test "scriptsjava" "javascripts" True
+  test "javscripts" "javascript" False
+  test "aabbcamaomsccdd" "commas" True
+  test "commas" "commas" True
+  test "sammoc" "commas" True

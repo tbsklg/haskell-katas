@@ -1,7 +1,7 @@
 module Kyu7.ConsecutiveDucksSpec (spec) where
 
-import Test.Hspec
 import Kyu7.ConsecutiveDucks (consecutiveDucks)
+import Test.Hspec
 
 spec :: Spec
 spec = do

@@ -1,7 +1,7 @@
 module Kyu7.Cake2Spec where
 
-import Test.Hspec
 import Kyu7.Cake2
+import Test.Hspec
 
 -- `spec` of type `Spec` must exist
 spec :: Spec
@@ -12,6 +12,6 @@ spec = do
     cakeSlice 2 `shouldBe` 4
     cakeSlice 3 `shouldBe` 7
     cakeSlice 10 `shouldBe` 56
-    
+
 -- the following line is optional for 8.2
 main = hspec spec

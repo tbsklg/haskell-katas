@@ -1,18 +1,17 @@
 module Kyu7.OlympicRingSpec where
 
-import Test.Hspec
 import Kyu7.OlympicRing
-
 import Test.HUnit (assertEqual)
+import Test.Hspec
 
 myTest str exp = do
   print $ "Looking for: " ++ show exp
   assertEqual msg exp actual
-  where 
+  where
     actual = olympicRing str
     msg = "Failed at: " ++ showArgs
     showArgs = str
-    
+
 spec :: Spec
 spec = do
   it "Fixed Tests" $ do
