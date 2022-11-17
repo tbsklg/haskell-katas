@@ -34,4 +34,3 @@ catMouse xs i
 --     mouse <- elemIndex 'm' s
 
 --     return $ go cat dog mouse
-
