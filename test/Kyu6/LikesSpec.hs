@@ -1,7 +1,7 @@
 module Kyu6.LikesSpec where
-import Test.Hspec
 
 import Kyu6.Likes
+import Test.Hspec
 
 spec :: Spec
 spec = do

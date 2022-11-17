@@ -1,22 +1,23 @@
+{-# LANGUAGE RecordWildCards #-}
+
 -- |
 -- Module      : Codewars
 -- Description : Utility functions for testing on Codewars with Hspec
 -- License     : MIT
-
-{-# LANGUAGE RecordWildCards #-}
-module Codewars (
-  Hidden(..),
-  solutionShouldHide,
-  solutionShouldHideAll,
-  shouldBeApproxPrec,
-  shouldBeApprox
-) where
+module Codewars
+  ( Hidden (..),
+    solutionShouldHide,
+    solutionShouldHideAll,
+    shouldBeApproxPrec,
+    shouldBeApprox,
+  )
+where
 
 import Data.List (intercalate)
-import Text.Printf
-import Test.Hspec
-import Test.HUnit (assertBool)
 import qualified Language.Haskell.Exts as Q
+import Test.HUnit (assertBool)
+import Test.Hspec
+import Text.Printf
 
 ripParseOk :: Q.ParseResult a -> IO a
 ripParseOk (Q.ParseOk x) = return x
@@ -43,8 +44,8 @@ specToStr (Q.IAbs _ _ x) = [nameToStr x]
 specToStr (Q.IThingAll _ x) = [nameToStr x]
 specToStr (Q.IThingWith _ x cn) = nameToStr x : map cnameToStr cn
 
-data ImportDesc =
-  ImportAll {mName :: String}
+data ImportDesc
+  = ImportAll {mName :: String}
   | ImportSome {mName :: String, mSymbols :: [String]}
   | HideSome {mName :: String, mSymbols :: [String]}
   deriving (Eq, Show)
@@ -61,24 +62,24 @@ treatPrelude :: [ImportDesc] -> [ImportDesc]
 treatPrelude xs = if any (\x -> mName x == "Prelude") xs then xs else ImportAll "Prelude" : xs
 
 data Hidden
-  -- | Module to be hidden
-  = Module {moduleName :: String}
-  -- | Symbol from a module to be hidden
-  | FromModule {moduleName :: String, symbolName :: String}
+  = -- | Module to be hidden
+    Module {moduleName :: String}
+  | -- | Symbol from a module to be hidden
+    FromModule {moduleName :: String, symbolName :: String}
   deriving (Eq)
 
 instance Show Hidden where
-  show (Module{..}) = moduleName
-  show (FromModule{..}) = moduleName ++ "." ++ symbolName
+  show (Module {..}) = moduleName
+  show (FromModule {..}) = moduleName ++ "." ++ symbolName
   showList hiddens xs = intercalate ", " (map show hiddens) ++ xs
 
 exposed :: ImportDesc -> Hidden -> Bool
-exposed (ImportAll{..}) (Module{..}) = mName == moduleName
-exposed (ImportAll{..}) (FromModule{..}) = mName == moduleName
-exposed (ImportSome{..}) (Module{..}) = mName == moduleName
-exposed (ImportSome{..}) (FromModule{..}) = mName == moduleName && symbolName `elem` mSymbols
-exposed (HideSome{..}) (Module{..}) = mName == moduleName
-exposed (HideSome{..}) (FromModule{..}) = mName == moduleName && symbolName `notElem` mSymbols
+exposed (ImportAll {..}) (Module {..}) = mName == moduleName
+exposed (ImportAll {..}) (FromModule {..}) = mName == moduleName
+exposed (ImportSome {..}) (Module {..}) = mName == moduleName
+exposed (ImportSome {..}) (FromModule {..}) = mName == moduleName && symbolName `elem` mSymbols
+exposed (HideSome {..}) (Module {..}) = mName == moduleName
+exposed (HideSome {..}) (FromModule {..}) = mName == moduleName && symbolName `notElem` mSymbols
 
 hidden :: [Hidden] -> Expectation
 hidden hiddens = do
@@ -87,7 +88,7 @@ hidden hiddens = do
   let failures = [(desc, hide) | desc <- imports, hide <- hiddens, exposed desc hide]
   let message = "Import declarations must hide " ++ show hiddens
   assertBool message $ null failures
-  
+
 -- | Check that solution hides a module or a symbol from a module.
 --
 -- > solutionShouldHide $ FromModule "Prelude" "head"
@@ -109,10 +110,15 @@ shouldBeApproxPrec margin actual expected =
     then return ()
     else expectationFailure message
   where
-    message = concat [
-      "Test Failed\nexpected: ", show expected,
-      " within margin of ", show margin,
-      "\n but got: ", show actual]
+    message =
+      concat
+        [ "Test Failed\nexpected: ",
+          show expected,
+          " within margin of ",
+          show margin,
+          "\n but got: ",
+          show actual
+        ]
 
 infix 1 `shouldBeApprox`
 
