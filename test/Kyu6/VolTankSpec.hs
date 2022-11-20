@@ -12,5 +12,5 @@ testVolTank h d vt s =
 spec :: Spec
 spec = do
   describe "tankvol" $ do
-    testVolTank 5 7 3848 2940
+    testVolTank 5 7 3848 2941
     testVolTank 2 7 3848 907

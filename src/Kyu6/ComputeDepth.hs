@@ -8,7 +8,7 @@ computeDepth n = depth digits [1 ..]
   where
     depth [] (x : _) = x
     depth d (x : xs)
-      | null (d \\ show (x * n)) = x + 1
+      | null (d \\ show (x * n)) = x
       | otherwise = depth (d \\ show (x * n)) xs
     depth _ _ = 0
 
