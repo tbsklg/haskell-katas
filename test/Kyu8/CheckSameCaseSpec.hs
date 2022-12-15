@@ -1,4 +1,4 @@
-module Kyu8.SameCaseSpec (spec) where
+module Kyu8.CheckSameCaseSpec (spec) where
 
 import Kyu8.CheckSameCase (sameCase)
 import Test.Hspec
