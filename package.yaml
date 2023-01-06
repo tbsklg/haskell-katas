@@ -21,10 +21,10 @@ description:         Please see the README on GitHub at <https://github.com/gith
 
 dependencies:
 - base >= 4.7 && < 5
-- split == 0.2.3.5
-- text == 1.2.5.0
-- time == 1.11.1.1
-- parsec == 3.1.15.0
+- split == 0.2.3.4
+- text == 1.2.4.1
+- time == 1.9.3
+- parsec == 3.1.14.0
 - array == 0.5.4.0
 library:
   source-dirs: src
@@ -52,7 +52,7 @@ tests:
     - -with-rtsopts=-N
     dependencies:
     - haskell-katas
-    - hspec == 2.9.7
+    - hspec == 2.7.10
     - QuickCheck == 2.14.2
     - HUnit == 1.6.2.0
     - haskell-src-exts == 1.23.*
