@@ -3,6 +3,7 @@ module Kyu6.SwapCaseUsingN (swap) where
 import Data.Char (toLower, toUpper, isLower, isUpper, isAlpha)
 
 swap :: String -> Int -> String
+swap xs 0 = xs
 swap xs i = swapCase (cycle . toBinary $ i) xs
     where
         swapCase _ [] = []
