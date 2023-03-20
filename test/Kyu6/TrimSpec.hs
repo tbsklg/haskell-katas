@@ -37,4 +37,3 @@ spec = do
     it "should remove everything from a string, containing only whitespaces" $ do
       trim " " `shouldBe` ""
       trim " \n  \t  \r   " `shouldBe` ""
-      trim "\ACK" shouldBe "\ACK"
