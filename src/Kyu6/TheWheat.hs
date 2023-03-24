@@ -12,4 +12,3 @@ treat ((x :<| xs) :|> y)
   | x < 0 = x :<| treat (xs :|> y)
   | y > 0 = treat (x :<| xs) :|> y
   | otherwise = (y :<| treat xs) :|> x
-
