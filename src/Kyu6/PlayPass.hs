@@ -1,7 +1,6 @@
 module Kyu6.PlayPass where
 
 import Data.Char (digitToInt, intToDigit, isAlpha, isDigit, toLower, toUpper)
-import Text.Read (Lexeme (Char))
 
 playPass :: String -> Int -> String
 playPass xs s = reverse . phrase . zip [0 ..] $ xs
