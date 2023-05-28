@@ -1,4 +1,4 @@
-module Kyu6.BackWardsPrimeSpec (spec, main) where
+module Kyu6.BackWardPrimeSpec (spec, main) where
 
 import Kyu6.BackWardsPrime
 import Test.HUnit
