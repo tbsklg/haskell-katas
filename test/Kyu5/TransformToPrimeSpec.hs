@@ -1,7 +1,7 @@
 module Kyu5.TransformToPrimeSpec where
 
 import Test.Hspec
-import Kyu5.TransformToPrime.Kata
+import Kyu5.TransformToPrime
 
 spec :: Spec
 spec = do

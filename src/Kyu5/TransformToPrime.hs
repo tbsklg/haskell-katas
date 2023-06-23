@@ -1,4 +1,4 @@
-module Kyu5.TransformToPrime.Kata where
+module Kyu5.TransformToPrime where
 
 minimumNumber :: [Integer] -> Integer
 minimumNumber xs = nextPrimeFrom (sum xs) - sum xs
