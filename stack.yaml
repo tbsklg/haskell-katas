@@ -2,4 +2,4 @@ ghc-options:
   $everything: -haddock
 packages:
 - .
-resolver: lts-18.17 
+resolver: lts-21.0
