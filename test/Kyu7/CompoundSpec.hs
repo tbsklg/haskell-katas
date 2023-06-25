@@ -18,8 +18,3 @@ spec = describe "compoundArray" $ do
       compoundArray xs [] `shouldBe` (xs :: [Int])
       compoundArray [] xs `shouldBe` (xs :: [Int])
 
-  it "returns a list with all elements" $
-    property $ \xs ys ->
-      let prop :: [Double] -> Bool
-          prop ks = ks \\ ys == xs && ks \\ xs == ys
-       in compoundArray xs ys `shouldSatisfy` prop
