@@ -11,7 +11,7 @@ spec = do
     basicTest 1 sierpinsky1
     basicTest 2 sierpinsky2
     basicTest 3 sierpinsky3
---    basicTest 4 sierpinsky4
+    basicTest 4 sierpinsky4
  
 basicTest n expected = 
   it (printf "<pre>%s</pre>" expected) $

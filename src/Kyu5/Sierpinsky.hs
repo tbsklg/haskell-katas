@@ -2,13 +2,19 @@ module Kyu5.Sierpinsky where
 
 import Data.List
 
-sierpinsky :: (Integral a) => a -> String
+type Iteration = Int
+type FractalWithNewLine = String
+type Fractal = [String]
+
+fractalLetter = "L"
+
+sierpinsky :: (Integral a) => a -> FractalWithNewLine
 sierpinsky = intercalate "\n" . go
  where
-  go 0 = ["L"]
+  go 0 = [fractalLetter]
   go n = go (n - 1) ++ project (go (n - 1)) (2 ^ n - 1)
 
-project :: [String] -> Int -> [String]
+project :: Fractal -> Iteration -> Fractal
 project [] _ = []
 project (l:ls) n = shift l n : project ls (n - 2)
   where
