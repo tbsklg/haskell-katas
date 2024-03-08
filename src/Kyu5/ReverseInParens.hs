@@ -2,25 +2,27 @@ module Kyu5.ReverseInParens (reverseInParens) where
 
 reverseInParens :: String -> String
 reverseInParens [] = []
-reverseInParens xs
-  | '(' `elem` xs = l ++ "(" ++ parens m ++ ")" ++ r
-  | otherwise = xs
-  where
-    l = takeWhile (/= '(') xs
-    r = reverse . takeWhile (/= ')') . reverse $ xs
-    m = reverse . saveTail . dropWhile (/= ')') . reverse . saveTail . dropWhile (/= '(') $ xs
+reverseInParens xs | '(' `notElem` xs = xs
+reverseInParens w@(x : xs)
+  | null capture = x : reverseInParens xs
+  | otherwise = r : reverseInParens (rs ++ further)
+ where
+  (capture, further) = captureBetween w
+  (r : rs) = reverse' capture
 
-parens :: String -> String
-parens [] = []
-parens w
-  | '(' `elem` w = reverseInParens . map flipParen . reverse $ w
-  | otherwise = reverse w
+reverse' = map flipParen . reverse
 
-flipParen :: Char -> Char
 flipParen ')' = '('
 flipParen '(' = ')'
 flipParen x = x
 
-saveTail :: [a] -> [a]
-saveTail [] = []
-saveTail xs = tail xs
+captureBetween :: String -> (String, String)
+captureBetween ('(' : xs) = (capture, further)
+ where
+  (capture, further) = go ("(", xs) 1
+
+  go (cs, fs) 0 = (cs, fs)
+  go (cs, '(' : fs) l = go (cs ++ "(", fs) (l + 1)
+  go (cs, ')' : fs) l = go (cs ++ ")", fs) (l - 1)
+  go (cs, f : fs) l = go (cs ++ [f], fs) l
+captureBetween xs = ("", xs)
