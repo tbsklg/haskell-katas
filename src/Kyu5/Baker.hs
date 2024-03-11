@@ -1,5 +1,7 @@
 module Kyu5.Baker where
 
+import Data.Maybe (fromMaybe)
+
 type Ingredient = String
 type Amount = Int
 type Recipe = [(Ingredient, Amount)]
@@ -9,13 +11,12 @@ cakes :: Recipe -> Storage -> Int
 cakes recipe storage =
   foldr
     ( \ingredient acc ->
-        min acc (numberOf (fst ingredient))
+        min acc $ fromMaybe 0 (numberOf $ fst ingredient)
     )
     maxBound
     recipe
  where
-  numberOf ingredient = case lookup ingredient storage of
-    Nothing -> 0
-    Just storageAmount -> case lookup ingredient recipe of
-      Nothing -> 0
-      Just recipeAmount -> storageAmount `div` recipeAmount
+  numberOf ingredient = do
+    storageAmount <- lookup ingredient storage
+    recipeAmount <- lookup ingredient recipe
+    pure $ storageAmount `div` recipeAmount
