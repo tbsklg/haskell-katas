@@ -6,4 +6,4 @@ isAlt (x: xs)
   | isVowel x = and . zipWith (\f x -> f x) (cycle [not . isVowel, isVowel]) $ xs
   | otherwise = and . zipWith (\f x -> f x) (cycle [isVowel, not . isVowel]) $ xs
 
-isVowel x = x `elem` "aeiou"
+isVowel = (`elem` "aeiou")
