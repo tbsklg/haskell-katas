@@ -12,8 +12,12 @@ decode = map (chr . toDec) . chunksOf 8 . map correctBits . triples
 triples :: [Char] -> [[Int]]
 triples = map (map digitToInt) . chunksOf 3
 
+-- >>> correctBits [1] 
+-- *** Exception: Prelude.!!: index too large
 correctBits :: [Int] -> Int
-correctBits = (!! 1) . sort
+correctBits [] = error "Cannot correct bits when no bits are given"
+correctBits [_] = error "Cannot correct bits when only one bit is given"
+correctBits xs = (!! 1) . sort $ xs
 
 toDec :: [Int] -> Int
 toDec = foldl (\acc curr -> acc * 2 + curr) 0
