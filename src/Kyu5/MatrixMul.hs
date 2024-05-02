@@ -4,7 +4,7 @@ import Data.List (transpose)
 
 type Mat a = [[a]]
 
-matMul :: Num a => Mat a -> Mat a -> Mat a
+matMul :: (Num a) => Mat a -> Mat a -> Mat a
 matMul a b = multiply a rotated
   where
     multiply (x : xs) (y : ys) = row x (y : ys) : multiply xs (y : ys)

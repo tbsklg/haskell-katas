@@ -1,12 +1,15 @@
 module Kyu5.IPv4 where
 
-import Data.Word  (Word32)
-import Data.List.Split (chunksOf)
 import Data.List (intercalate)
+import Data.List.Split (chunksOf)
+import Data.Word (Word32)
 
 type IPString = String
+
 type Bits = [Int]
+
 type Bit32 = [Int]
+
 type Bit8 = [Int]
 
 type Octets = [Bit8]
@@ -26,4 +29,3 @@ toBit32 xs = replicate (32 - length xs) 0 ++ xs
 binary :: Word32 -> Bits
 binary 0 = []
 binary x = binary (x `div` 2) ++ [fromIntegral x `mod` 2]
-

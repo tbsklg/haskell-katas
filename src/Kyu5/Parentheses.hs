@@ -18,8 +18,8 @@ validParentheses' l = validate' l []
     validate' (x : xs) s
       | x == '(' = validate' xs (push ')' s)
       | otherwise = case pop s of
-        Just a -> ')' == snd a && validate' xs (fst a)
-        _ -> False
+          Just a -> ')' == snd a && validate' xs (fst a)
+          _ -> False
 
 push :: Char -> [Char] -> [Char]
 push c s = c : s

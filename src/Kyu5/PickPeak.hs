@@ -4,13 +4,13 @@ data PickedPeaks = PickedPeaks {pos :: [Int], peaks :: [Int]} deriving (Eq, Show
 
 pickPeaks :: [Int] -> PickedPeaks
 pickPeaks = go [] [] . clean . zip [0 ..]
- where
-  go pos peaks ((i, x) : (j, y) : (k, z) : xs)
-    | x < y && y >= z = go (pos ++ [j]) (peaks ++ [y]) further
-    | otherwise = go pos peaks further
-   where
-    further = (j, y) : (k, z) : xs
-  go pos peaks _ = PickedPeaks pos peaks
+  where
+    go pos peaks ((i, x) : (j, y) : (k, z) : xs)
+      | x < y && y >= z = go (pos ++ [j]) (peaks ++ [y]) further
+      | otherwise = go pos peaks further
+      where
+        further = (j, y) : (k, z) : xs
+    go pos peaks _ = PickedPeaks pos peaks
 
 clean :: [(Int, Int)] -> [(Int, Int)]
 clean [] = []
