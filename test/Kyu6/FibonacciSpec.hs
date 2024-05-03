@@ -1,7 +1,7 @@
 module Kyu6.FibonacciSpec where
 
-import Test.Hspec
 import Kyu6.Fibonacci
+import Test.Hspec
 
 spec :: Spec
 spec = do
@@ -25,4 +25,3 @@ spec = do
     fib 65 `shouldBe` 10610209857723
     fib 70 `shouldBe` 117669030460994
     fib 75 `shouldBe` 1304969544928657
-

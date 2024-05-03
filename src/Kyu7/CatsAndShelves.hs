@@ -5,4 +5,3 @@ solve f t
   | f == t = 0
   | t - f >= 3 = 1 + solve (f + 3) t
   | otherwise = 1 + solve (f + 1) t
-

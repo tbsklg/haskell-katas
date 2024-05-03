@@ -15,19 +15,19 @@ median :: [Time] -> Time
 median xs
   | odd . length $ xs = toTime $ middle
   | otherwise = toTime $ (leftMiddle + middle) `div` 2
- where
-  leftMiddle = toSeconds $ (sort xs) !! (length xs `div` 2 - 1)
-  middle = toSeconds $ (sort xs) !! (length xs `div` 2)
+  where
+    leftMiddle = toSeconds $ (sort xs) !! (length xs `div` 2 - 1)
+    middle = toSeconds $ (sort xs) !! (length xs `div` 2)
 
 average :: [Time] -> Time
 average xs = toTime $ sum seconds `div` length seconds
- where
-  seconds = map toSeconds xs
+  where
+    seconds = map toSeconds xs
 
 range :: [Time] -> Time
 range xs = toTime $ maximum seconds - minimum seconds
- where
-  seconds = map toSeconds xs
+  where
+    seconds = map toSeconds xs
 
 toSeconds :: Time -> Int
 toSeconds (h, m, s) = h * 3600 + m * 60 + s

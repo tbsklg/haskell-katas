@@ -62,7 +62,7 @@ boolToWord x
   | x = "Yes"
   | otherwise = "No"
 
-twiceAsOld :: Num a => a -> a -> a
+twiceAsOld :: (Num a) => a -> a -> a
 twiceAsOld father son = abs $ father - 2 * son
 
 getInitials :: String -> String
@@ -121,7 +121,7 @@ reverseSeq n = reverse [1 .. n]
 findSmallestInteger :: [Int] -> Int
 findSmallestInteger = minimum
 
-doubleInteger :: Num a => a -> a
+doubleInteger :: (Num a) => a -> a
 doubleInteger a = 2 * a
 
 isVow :: [Int] -> [Either Int String]
@@ -141,7 +141,7 @@ howManyDalmatians x
   | x <= 100 = "Woah that's a lot of dogs!"
   | otherwise = show (sum x)
 
-check :: Eq a => [a] -> a -> Bool
+check :: (Eq a) => [a] -> a -> Bool
 check l a = a `elem` l
 
 sumMix :: [Either String Int] -> Int
@@ -185,7 +185,7 @@ cockroachSpeed :: Double -> Integer
 cockroachSpeed s = floor ((s * 1000 * 100) / 3600)
 
 invert :: [Integer] -> [Integer]
-invert = map (\x -> x * (- 1))
+invert = map (\x -> x * (-1))
 
 -- invert = map negate
 
@@ -221,7 +221,7 @@ findDifference (a, b, c) (d, e, f) = abs (a * b * c - d * e * f)
 
 stringy :: Int -> String
 stringy 0 = ""
-stringy s = stringy (s -1) ++ show (s `mod` 2)
+stringy s = stringy (s - 1) ++ show (s `mod` 2)
 
 -- stringy n = take n $ cycle "10"
 
@@ -229,8 +229,8 @@ warnTheSheep :: [String] -> String
 warnTheSheep s
   | last s == "wolf" = "Pls go away and stop eating my sheep"
   | otherwise = case index s of
-    Nothing -> ""
-    Just s -> "Oi! Sheep number " ++ show s ++ "! You are about to be eaten by a wolf!"
+      Nothing -> ""
+      Just s -> "Oi! Sheep number " ++ show s ++ "! You are about to be eaten by a wolf!"
   where
     index s = elemIndex "wolf" (reverse s)
 
@@ -293,7 +293,7 @@ century year
   where
     century = year `div` 100
 
-multiply :: Num a => a -> a -> a
+multiply :: (Num a) => a -> a -> a
 multiply a b = a * b
 
 -- multiply = (*)
@@ -331,7 +331,7 @@ derive x y = show (x * y) ++ "^" ++ show (y - 1)
 past :: Int -> Int -> Int -> Int
 past h m s = (h * 3600 + m * 60 + s) * 1000
 
-sum' :: Num a => [a] -> a
+sum' :: (Num a) => [a] -> a
 sum' [] = 0
 sum' (x : xs) = x + sum' xs
 
@@ -356,7 +356,7 @@ parseFloat :: String -> Maybe Float
 parseFloat = readMaybe
 
 quadratic :: Int -> Int -> (Int, Int, Int)
-quadratic x1 x2 = (1, - x1 - x2, x1 * x2)
+quadratic x1 x2 = (1, -x1 - x2, x1 * x2)
 
 isDivisible :: Int -> Int -> Int -> Bool
 isDivisible x a b = x `mod` a == 0 && x `mod` b == 0
@@ -443,7 +443,7 @@ betterThanAverage x a = (fromIntegral (sum x) / fromIntegral (length x)) < fromI
 goals :: Int -> Int -> Int -> Int
 goals ll cdr cl = ll + cdr + cl
 
-opposite :: Num a => a -> a
+opposite :: (Num a) => a -> a
 opposite a = a * (-1)
 
 -- opposite = negate
@@ -538,7 +538,7 @@ seatsBlocked tot_cols tot_rows col row = rowsBehind * colsBehind
     rowsBehind = tot_rows - row
     colsBehind = tot_cols - col
 
-evenOrOdd :: Integral a => a -> [Char]
+evenOrOdd :: (Integral a) => a -> [Char]
 evenOrOdd s
   | even s = "Even"
   | otherwise = "Odd"
@@ -660,12 +660,12 @@ remove (x : xs) n
 
 -- remove str n = str \\ (replicate n '!')
 
-next :: Eq a => a -> [a] -> Maybe a
+next :: (Eq a) => a -> [a] -> Maybe a
 next item xs = case elemIndex item xs of
-  Just l -> if (length xs -1) == l then Nothing else Just (xs !! (l + 1))
+  Just l -> if (length xs - 1) == l then Nothing else Just (xs !! (l + 1))
   Nothing -> Nothing
 
---next item [] = Nothing
+-- next item [] = Nothing
 -- next item [_] = Nothing
 -- next item (x:y:xs)
 --   | x == item = Just y
@@ -859,7 +859,7 @@ round2 n = fromIntegral (round (n * 10 ^ 2)) / 10 ^ 2
 gravity :: [Double] -> [String] -> Double
 gravity (m1 : m2 : d : _) (t1 : t2 : t3 : _) = f (toKilograms m1 t1) (toKilograms m2 t2) (toMeters d t3)
 
-toMeters :: Fractional a => a -> [Char] -> a
+toMeters :: (Fractional a) => a -> [Char] -> a
 toMeters v u
   | u == "μm" = v * 1e-6
   | u == "mm" = v * 1e-3
@@ -867,7 +867,7 @@ toMeters v u
   | u == "ft" = v * 0.3048
   | otherwise = v
 
-toKilograms :: Fractional a => a -> [Char] -> a
+toKilograms :: (Fractional a) => a -> [Char] -> a
 toKilograms v u
   | u == "μg" = v * 1e-9
   | u == "mg" = v * 1e-6

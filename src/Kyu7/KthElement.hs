@@ -7,5 +7,5 @@ elementAt :: Int -> [a] -> Maybe a
 elementAt n xs
   | n <= 0 = Nothing
   | otherwise = case drop (n - 1) xs of
-    [] -> Nothing
-    a -> Just . head $ a
+      [] -> Nothing
+      a -> Just . head $ a

@@ -1,6 +1,7 @@
 module Kyu6.ExpandedNumberSpec where
-import Test.Hspec
+
 import Kyu6.ExpandedNumber
+import Test.Hspec
 
 spec :: Spec
 spec = do

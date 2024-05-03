@@ -10,7 +10,7 @@ calcTip price rating
       | round' price < 10 = 0
       | otherwise = read . concatMap show . init . digits . round' $ price
 
-round' :: Integral p => Int -> p
+round' :: (Integral p) => Int -> p
 round' x
   | (==) 5 . last . digits $ x = (*) 10 . ceiling . (/ 10) . fromIntegral $ x
   | otherwise = (*) 10 . round . (/ 10) . fromIntegral $ x

@@ -5,4 +5,4 @@ import Test.Hspec
 
 spec = do
   it "Example test" $ do
-    parse "iiisdoso" `shouldBe` [ 8, 64 ]
+    parse "iiisdoso" `shouldBe` [8, 64]

@@ -1,7 +1,7 @@
 module Kyu6.Primorial where
 
 numPrimorial :: Int -> Integer
-numPrimorial n = product $ take n primes 
+numPrimorial n = product $ take n primes
 
 primes :: [Integer]
 primes = filter isPrime $ [2 ..]

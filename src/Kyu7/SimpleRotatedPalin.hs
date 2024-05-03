@@ -7,5 +7,5 @@ solve x = go 0 (cycle x)
       | n == length x = False
       | otherwise = isPalindrom (take (length x) xs) || go (n + 1) (tail xs)
 
-isPalindrom :: Eq a => [a] -> Bool
+isPalindrom :: (Eq a) => [a] -> Bool
 isPalindrom x = (==) x . reverse $ x

@@ -1,7 +1,7 @@
 module Kyu6.SimpleNumberSequenceSpec (spec) where
 
-import Test.Hspec
 import Kyu6.SimpleNumberSequence (missing)
+import Test.Hspec
 
 spec = do
   describe "Simple number sequence" $ do

@@ -25,7 +25,7 @@ floatPernicious i
   where
     primes = filter (isPrime . popCount) [0 .. floor i]
 
-isPrime :: Integral a => a -> Bool
+isPrime :: (Integral a) => a -> Bool
 isPrime 0 = False
 isPrime 1 = False
 isPrime i = all (\x -> i `mod` x > 0) [2 .. (i - 1)]

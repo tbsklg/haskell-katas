@@ -4,7 +4,7 @@ import Kyu7.NthSeries
 import Test.Hspec
 import Text.Printf (printf)
 
---testSumSeries :: Integer -> String -> SpecWith (Arg Expectation)
+-- testSumSeries :: Integer -> String -> SpecWith (Arg Expectation)
 testSumSeries nb r =
   it (printf " %i " nb) $
     seriesSum nb `shouldBe` r

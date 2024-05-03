@@ -17,4 +17,3 @@ spec = describe "compoundArray" $ do
     property $ \xs -> do
       compoundArray xs [] `shouldBe` (xs :: [Int])
       compoundArray [] xs `shouldBe` (xs :: [Int])
-

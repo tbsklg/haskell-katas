@@ -9,7 +9,7 @@ findAB xs i
   where
     matches = filter (\(x, y) -> x * y == i) . perms $ xs
 
-perms :: Eq b => [b] -> [(b, b)]
+perms :: (Eq b) => [b] -> [(b, b)]
 perms [] = []
 perms l = nub . go $ l
   where

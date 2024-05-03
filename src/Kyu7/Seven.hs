@@ -11,10 +11,10 @@ seven m = calcDivisibility m 1
       where
         current = y m
 
-hasAtMostTwoDigits :: Integral a => a -> Bool
+hasAtMostTwoDigits :: (Integral a) => a -> Bool
 hasAtMostTwoDigits x = x <= 99
 
-y :: Integral a => a -> a
+y :: (Integral a) => a -> a
 y x = firstDigits - 2 * lastDigit
   where
     firstDigits = x `div` 10

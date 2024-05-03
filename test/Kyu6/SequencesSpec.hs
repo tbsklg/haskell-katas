@@ -1,4 +1,5 @@
 module Kyu6.SequencesSpec where
+
 import Kyu6.Sequences (getScore)
 import Test.Hspec
 
@@ -11,4 +12,3 @@ spec = do
       getScore 3 `shouldBe` 300
       getScore 4 `shouldBe` 500
       getScore 5 `shouldBe` 750
-

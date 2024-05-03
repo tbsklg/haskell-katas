@@ -1,7 +1,6 @@
 module Kyu6.SumconsecSpec where
 
 import Kyu6.Sumconsec (sumConsecutives)
-
 import Test.Hspec
 import Text.Printf (printf)
 

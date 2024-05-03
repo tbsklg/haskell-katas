@@ -1,4 +1,5 @@
 module Kyu6.SimpleIndicesSpec where
+
 import Kyu6.SimpleIndices
 import Test.Hspec
 

@@ -1,8 +1,7 @@
 module Kyu6.Duplicates where
 
-import Data.List ((\\), nub)
 import Data.Char (toLower)
+import Data.List (nub, (\\))
 
 duplicateCount :: String -> Int
-duplicateCount xs = length . nub . (\\) (map toLower xs) $ (['a' .. 'z'] ++ ['0' .. '9']) 
-
+duplicateCount xs = length . nub . (\\) (map toLower xs) $ (['a' .. 'z'] ++ ['0' .. '9'])

@@ -1,7 +1,7 @@
 module Kyu6.NextVersionSpec where
-import Test.Hspec
 
 import Kyu6.NextVersion (nextVersion)
+import Test.Hspec
 
 spec :: Spec
 spec = do

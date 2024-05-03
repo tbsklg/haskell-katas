@@ -4,6 +4,7 @@ import Kyu6.BuyCar
 import Test.Hspec
 
 main = hspec spec
+
 spec = do
   describe "nbMonths" $ do
     it "1st series" $ do

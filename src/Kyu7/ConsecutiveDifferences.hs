@@ -6,7 +6,7 @@ differences l
   | (==) 1 . length . diffs $ l = head . diffs $ l
   | otherwise = differences . diffs $ l
 
-diffs :: Num a => [a] -> [a]
+diffs :: (Num a) => [a] -> [a]
 diffs [] = []
 diffs [x] = [x]
 diffs [x, y] = [abs (x - y)]

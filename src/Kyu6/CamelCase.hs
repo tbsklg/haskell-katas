@@ -6,5 +6,5 @@ import Data.List.Split (splitOneOf)
 toCamelCase :: String -> String
 toCamelCase [] = []
 toCamelCase str = (++) x . concatMap (\(y : ys) -> toUpper y : ys) . filter (/= "") $ xs
- where
-  (x : xs) = splitOneOf "-_" str
+  where
+    (x : xs) = splitOneOf "-_" str

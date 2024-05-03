@@ -1,4 +1,4 @@
 module Kyu8.Square where
 
 square :: Integer -> Integer
-square = (^2)
+square = (^ 2)

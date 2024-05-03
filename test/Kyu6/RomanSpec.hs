@@ -11,4 +11,3 @@ spec =
     solution "IV" `shouldBe` 4
     solution "MMVIII" `shouldBe` 2008
     solution "MDCLXVI" `shouldBe` 1666
-

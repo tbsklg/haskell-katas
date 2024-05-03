@@ -1,14 +1,15 @@
 module Kyu6.AdjacentPairsSpec (spec, main) where
 
+import Kyu6.AdjacentPairs (countAdjacentPairs)
 import Test.Hspec
 import Test.QuickCheck
-import Kyu6.AdjacentPairs (countAdjacentPairs)
 
 main = hspec spec
+
 spec = do
   describe "mistakes" $ do
     it "should work for several examples" $ do
-      countAdjacentPairs "dog cat" `shouldBe` 0      
+      countAdjacentPairs "dog cat" `shouldBe` 0
       countAdjacentPairs "dog cat" `shouldBe` 0
       countAdjacentPairs "dog dog cat" `shouldBe` 1
       countAdjacentPairs "apple dog cat" `shouldBe` 0

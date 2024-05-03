@@ -1,8 +1,8 @@
 module Kyu6.CreatePhoneNumberSpec where
 
 import Kyu6.CreatePhoneNumber
-import Test.QuickCheck
 import Test.Hspec
+import Test.QuickCheck
 
 spec :: Spec
 spec = do

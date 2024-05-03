@@ -9,7 +9,8 @@ missing [] = Nothing
 missing [_, _] = Nothing
 missing xs = findMissing 1
   where
-    findMissing size | size > length xs `div` 2 = Nothing
+    findMissing size
+      | size > length xs `div` 2 = Nothing
       | isRelevant . extractInts size $ xs = case findGap . extractInts size $ xs of
           Nothing -> findMissing (size + 1)
           Just g -> Just g
@@ -25,8 +26,8 @@ isRelevant xs = (gapsWithOne == length xs - 2) && gapsWithTwo == 1
 extractInts :: Gap -> String -> [Int]
 extractInts _ [] = []
 extractInts g xs
-  | extractedNumber == (read . replicate g $ '9') = 
-    extractedNumber : extractInts (g + 1) furtherNumber
+  | extractedNumber == (read . replicate g $ '9') =
+      extractedNumber : extractInts (g + 1) furtherNumber
   | otherwise = extractedNumber : extractInts g furtherNumber
   where
     extractedNumber = read (take g xs) :: Int
@@ -36,4 +37,3 @@ findGap :: [Int] -> Maybe Int
 findGap xs = case find (\(x, y) -> y - x /= 1) . zip xs . tail $ xs of
   Nothing -> Nothing
   Just (x, _) -> Just (x + 1)
-

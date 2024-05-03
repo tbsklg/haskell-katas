@@ -10,6 +10,6 @@ singleDigit i
 countOnes :: [Integer] -> Integer
 countOnes = sum . filter (== 1)
 
-decToBin :: Integral a => a -> [a]
+decToBin :: (Integral a) => a -> [a]
 decToBin 0 = []
 decToBin n = (n `mod` 2) : decToBin (n `div` 2)

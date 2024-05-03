@@ -1,8 +1,8 @@
 module Kyu6.LastSurvivorsSpec (spec) where
 
+import Data.List (sort)
 import Kyu6.LastSurvivors (lastSurvivors)
 import Test.Hspec
-import Data.List (sort)
 
 spec :: Spec
 spec = do

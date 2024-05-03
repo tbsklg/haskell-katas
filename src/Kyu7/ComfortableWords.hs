@@ -7,10 +7,10 @@ comfortableWord (x : xs)
   | x `elem` right = isComfortableForRight (odds (x : xs)) && isComfortableForLeft (evens (x : xs))
   | otherwise = False
 
-isComfortableForLeft :: Foldable t => t Char -> Bool
+isComfortableForLeft :: (Foldable t) => t Char -> Bool
 isComfortableForLeft = foldr ((&&) . (`elem` left)) True
 
-isComfortableForRight :: Foldable t => t Char -> Bool
+isComfortableForRight :: (Foldable t) => t Char -> Bool
 isComfortableForRight = foldr ((&&) . (`elem` right)) True
 
 odds :: [a] -> [a]

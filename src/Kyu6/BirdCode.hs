@@ -1,7 +1,7 @@
 module Kyu6.BirdCode where
 
-import Data.List.Split (splitOneOf)
 import Data.Char (toUpper)
+import Data.List.Split (splitOneOf)
 
 birdCode :: [String] -> [String]
 birdCode = map (toUpperCase . createCode . splitOneOf "- ")

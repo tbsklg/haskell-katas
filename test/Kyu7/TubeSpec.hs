@@ -19,7 +19,8 @@ spec = do
       ]
       $ \(d, b, w, s, f) ->
         it ("should return " ++ show s ++ " for " ++ show (d, b, w)) $
-          when (calculator d b w /= s) $ expectationFailure f
+          when (calculator d b w /= s) $
+            expectationFailure f
 
     it "returns Walk if the distance is small" $
       property $

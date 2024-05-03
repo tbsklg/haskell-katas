@@ -1,9 +1,9 @@
 module Kyu6.Howmany where
 
 import Data.Char (digitToInt)
+import Data.Either (isRight)
 import Data.List (nub, sort)
 import Text.Printf (printf)
-import Data.Either (isRight)
 
 newtype MkNumber = MkNumber Int
   deriving (Show)
@@ -12,18 +12,18 @@ selNumber :: Int -> Int -> Int
 selNumber n d = length . filter isRight . map (`mknumber` d) $ numbers
   where
     numbers :: [Int]
-    numbers = [1..n]
+    numbers = [1 .. n]
 
 mknumber :: Int -> Int -> Either String MkNumber
 mknumber n d = case validate $ digits n of
   Right xs -> Right . MkNumber . read . show $ xs
   Left err -> Left err
- where
-  validate ds =
-    atLeastTwo ds
-      >>= inAscendingOrder
-      >>= unique
-      >>= gapBetweenIsAtMost d
+  where
+    validate ds =
+      atLeastTwo ds
+        >>= inAscendingOrder
+        >>= unique
+        >>= gapBetweenIsAtMost d
 
 digits :: Int -> [Int]
 digits = map digitToInt . show

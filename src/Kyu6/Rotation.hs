@@ -13,4 +13,4 @@ shiftedDiff a b
       | otherwise = countShifts a (shift b) (c + 1)
 
     shift [] = []
-    shift (x:xs) = xs ++ [x]
+    shift (x : xs) = xs ++ [x]

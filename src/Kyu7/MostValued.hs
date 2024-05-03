@@ -23,7 +23,7 @@ mostValuable (c, a) (c', b)
   | c < c' = LT
   | otherwise = GT
 
-alpha :: Ord a => a -> a -> Ordering
+alpha :: (Ord a) => a -> a -> Ordering
 alpha a b
   | a < b = GT
   | otherwise = LT

@@ -6,5 +6,5 @@ solve xs
   | isPalindrom xs && (odd . length $ xs) = True
   | otherwise = (==) 2 . length . filter (uncurry (/=)) . zip xs $ reverse xs
 
-isPalindrom :: Eq a => [a] -> Bool
+isPalindrom :: (Eq a) => [a] -> Bool
 isPalindrom xs = xs == reverse xs

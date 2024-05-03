@@ -5,7 +5,7 @@ import Data.List (group)
 baumSweet :: [Int]
 baumSweet = map ((baum . group) . binary) [0 ..]
 
-binary :: Integral a => a -> [a]
+binary :: (Integral a) => a -> [a]
 binary 0 = []
 binary x = binary (x `div` 2) ++ [x `mod` 2]
 

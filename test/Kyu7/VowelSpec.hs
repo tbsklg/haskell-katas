@@ -15,9 +15,9 @@ spec = do
 
     it "should work for vowel-only strings" $ do
       property $ \n ->
-        n >= 0
-          ==> getCount (take n . cycle $ "aeiou") `shouldBe` n
+        n >= 0 ==>
+          getCount (take n . cycle $ "aeiou") `shouldBe` n
     it "should work for consonant strings" $ do
       property $ \n ->
-        n >= 0
-          ==> getCount (take n . cycle $ "bcdfghjklmnpqrstvwxyz") `shouldBe` 0
+        n >= 0 ==>
+          getCount (take n . cycle $ "bcdfghjklmnpqrstvwxyz") `shouldBe` 0

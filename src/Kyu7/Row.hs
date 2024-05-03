@@ -9,7 +9,7 @@ rowWeights l =
       (_, e) = unzip a
    in [sum o, sum e]
 
-parts :: Integral a => [b] -> ([(a, b)], [(a, b)])
+parts :: (Integral a) => [b] -> ([(a, b)], [(a, b)])
 parts l = partition (even . fst) (zip [0 ..] l)
 
 -- rowWeights :: [Int] -> [Int]

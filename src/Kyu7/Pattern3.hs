@@ -6,8 +6,8 @@ pattern :: Int -> String
 pattern n
   | n <= 0 = ""
   | otherwise =
-    intercalate "\n"
-      . map (concatMap show)
-      . tail
-      . inits
-      $ [n, n -1 .. 1]
+      intercalate "\n"
+        . map (concatMap show)
+        . tail
+        . inits
+        $ [n, n - 1 .. 1]

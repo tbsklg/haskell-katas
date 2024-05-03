@@ -14,7 +14,7 @@ calcFactSum t = for $ digits t
     for [] = 0
     for (x : xs) = factorial x + for xs
 
-digits :: Integral x => x -> [x]
+digits :: (Integral x) => x -> [x]
 digits 0 = []
 digits x = digits (x `div` 10) ++ [x `mod` 10]
 

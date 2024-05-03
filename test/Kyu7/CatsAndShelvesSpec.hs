@@ -1,8 +1,8 @@
 module Kyu7.CatsAndShelvesSpec (spec) where
 
 import Kyu7.CatsAndShelves (solve)
-import Test.Hspec
 import Test.HUnit (assertEqual)
+import Test.Hspec
 
 spec :: Spec
 spec = do

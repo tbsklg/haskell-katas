@@ -21,20 +21,19 @@ decrypt xs n = decrypt decrypted (n - 1)
 
     decrypted = map snd . sortOn fst $ (oddsWithIndices ++ evensWithIndices)
 
-
 -- import Data.List (partition, transpose)
 
 -- encrypt :: String -> Int -> String
--- encrypt s n 
+-- encrypt s n
 --   | n > 0 = iterate go s !! n
 --   | otherwise = s
 --   where
 --     go = map snd . uncurry (++) . partition (odd . fst) . zip [0..]
-    
+
 -- decrypt :: String -> Int -> String
--- decrypt s n 
+-- decrypt s n
 --   | n > 0 = iterate go s !! n
 --   | otherwise = s
 --   where
 --     l = length s
---     go s = concat $ transpose $ [drop (l `div` 2) s, take (l `div` 2) s]  
+--     go s = concat $ transpose $ [drop (l `div` 2) s, take (l `div` 2) s]

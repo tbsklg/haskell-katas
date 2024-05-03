@@ -12,4 +12,3 @@ spec = do
     findChildren "AaaaaZazzz" `shouldBe` "AaaaaaZzzz"
     findChildren "CbcBcbaA" `shouldBe` "AaBbbCcc"
     findChildren "xXfuUuuF" `shouldBe` "FfUuuuXx"
-

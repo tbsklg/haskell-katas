@@ -23,4 +23,3 @@ spec = do
       property $
         forAll (fmap (getOrdered . fmap getNonNegative) arbitrary) $ \xs ->
           groupIn10s xs `shouldSatisfy` \lst -> concat lst == xs
-

@@ -11,6 +11,6 @@ isVampire a b = (a > 0 || b > 0) && sameDigits
     b' = digits b
     c' = digits (a * b)
 
-digits :: Integral a => a -> [a]
+digits :: (Integral a) => a -> [a]
 digits 0 = []
 digits i = digits (abs i `div` 10) ++ [abs i `mod` 10]

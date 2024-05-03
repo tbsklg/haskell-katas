@@ -1,15 +1,17 @@
 module Kyu6.SalesmanTravel where
 
-import Text.Parsec
-import qualified Data.Map as M
 import Data.List (intercalate)
+import qualified Data.Map as M
 import Debug.Trace
+import Text.Parsec
 
-data Address = Address {
-  street :: String,
-  houseNumber :: String,
-  zipCode :: String,
-  state :: String } deriving (Show)
+data Address = Address
+  { street :: String,
+    houseNumber :: String,
+    zipCode :: String,
+    state :: String
+  }
+  deriving (Show)
 
 travel :: String -> String -> String
 travel r zipcode = case M.lookup zipcode . addressBook $ r of
@@ -27,7 +29,7 @@ addressBook raw = case parse parseAddresses "" raw of
 parseAddresses :: Parsec String () [Address]
 parseAddresses = do
   addresses <- sepBy parseAddress (char ',')
-  return addresses 
+  return addresses
 
 parseAddress :: Parsec String () Address
 parseAddress = do
@@ -37,4 +39,4 @@ parseAddress = do
   state <- many1 upper
   space
   zipCode <- many1 digit <|> string ""
-  return Address {street = init street, houseNumber = houseNumber, zipCode = zipCode, state = state} 
+  return Address {street = init street, houseNumber = houseNumber, zipCode = zipCode, state = state}

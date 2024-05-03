@@ -1,7 +1,8 @@
 module Kyu6.LongestPalindromeSpec where
+
+import Kyu6.LongestPalindrome
 import Test.Hspec
 import Test.QuickCheck
-import Kyu6.LongestPalindrome
 
 spec :: Spec
 spec = do
@@ -19,4 +20,3 @@ spec = do
     it "It should work for more examples" $ do
       (longestPalindrome "abcdefghba") `shouldBe` 1
       (longestPalindrome "baablkj12345432133d") `shouldBe` 9
-

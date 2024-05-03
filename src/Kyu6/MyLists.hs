@@ -17,4 +17,3 @@ foldList xs n = foldList nextToFold (n - 1)
       | otherwise = drop half xs
 
     half = length xs `div` 2
-

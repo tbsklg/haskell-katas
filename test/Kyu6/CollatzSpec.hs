@@ -1,6 +1,6 @@
 module Kyu6.CollatzSpec where
-import Kyu6.Collatz (collatz)
 
+import Kyu6.Collatz (collatz)
 import Test.Hspec
 
 spec :: Spec

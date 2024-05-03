@@ -14,5 +14,5 @@ minimumPerimeter area =
       | x <= min = go x xs
       | otherwise = traceShow l min
 
-perimeter :: Num a => a -> a -> a
+perimeter :: (Num a) => a -> a -> a
 perimeter x y = 2 * x + 2 * y

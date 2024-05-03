@@ -31,6 +31,6 @@ spec = do
     forM_ [(North, South), (South, North), (West, East), (East, West)] $ \(a, b) ->
       it ("should return the right amount of " ++ show a) $
         property $ \t y ->
-          t > 0 && y > 0
-            ==> let x = t + y
-                 in dirReduce (replicate x a ++ replicate y b) `shouldBe` replicate (x - y) a
+          t > 0 && y > 0 ==>
+            let x = t + y
+             in dirReduce (replicate x a ++ replicate y b) `shouldBe` replicate (x - y) a
