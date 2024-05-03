@@ -7,4 +7,3 @@ getParticipants handshakes = findMinParticipants 1
     findMinParticipants n
       | n * (n - 1) `div` 2 >= handshakes = n
       | otherwise = findMinParticipants (n + 1)
-

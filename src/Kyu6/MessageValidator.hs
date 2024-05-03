@@ -1,13 +1,12 @@
 module Kyu6.MessageValidator (isAValidMessage) where
 
-import Data.Char (isDigit, isAlpha)
+import Data.Char (isAlpha, isDigit)
 
 isAValidMessage :: [Char] -> Bool
 isAValidMessage [] = True
-isAValidMessage message@(x:_)
+isAValidMessage message@(x : _)
   | null message' || isAlpha x || numberOfChars > length message' = False
-  | otherwise = all isAlpha (take numberOfChars message') && isAValidMessage (drop numberOfChars message') 
+  | otherwise = all isAlpha (take numberOfChars message') && isAValidMessage (drop numberOfChars message')
   where
     numberOfChars = read . takeWhile isDigit $ message
     message' = dropWhile isDigit $ message
-

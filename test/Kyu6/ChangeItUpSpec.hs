@@ -12,4 +12,3 @@ spec = do
     change "Hello World" `shouldBe` "Ifmmp xpsmE"
     change "dogs" `shouldBe` "Epht"
     change "z" `shouldBe` "A"
-

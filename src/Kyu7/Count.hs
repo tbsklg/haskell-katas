@@ -13,7 +13,7 @@ countSpecDigits a =
   where
     dict = map (head &&& length) . group . sort . concatMap digits $ a
 
-digits :: Integral a => a -> [a]
+digits :: (Integral a) => a -> [a]
 digits 0 = [0]
 digits x = go x
   where

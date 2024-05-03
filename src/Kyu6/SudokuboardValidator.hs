@@ -1,7 +1,7 @@
 module Kyu6.SudokuboardValidator (validateSudoku) where
 
 import Data.List (transpose)
-import Data.Set as S ( fromList )
+import Data.Set as S (fromList)
 
 type Sudoku = [[Int]]
 

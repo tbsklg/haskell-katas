@@ -5,6 +5,7 @@ import Test.HUnit
 import Test.Hspec
 
 main = hspec spec
+
 spec = do
   describe "BackWards Primes" $ do
     it "1st series" $ do

@@ -11,7 +11,7 @@ olympicRing s
   where
     score = floor ((sum . map rings $ s) / 2)
 
-rings :: Num p => Char -> p
+rings :: (Num p) => Char -> p
 rings x
   | x `elem` "abdegopqADOPQR" = 1
   | x == 'B' = 2

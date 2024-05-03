@@ -11,4 +11,3 @@ change = map ((capitalizeVowel . (\x -> if isAlpha x then shift x else x)) . toL
     capitalizeVowel x
       | x `elem` "aeiou" = toUpper x
       | otherwise = x
-

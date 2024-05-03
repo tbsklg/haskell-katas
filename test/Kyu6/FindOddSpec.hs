@@ -20,6 +20,6 @@ spec = do
         findOdd [y, y, x] `shouldBe` x
 
     prop "works for lists with five elements" $ \x y ->
-      x /= y
-        ==> let perms = permutations [x, x, x, y, y]
-             in for_ perms $ \xs -> findOdd xs `shouldBe` x
+      x /= y ==>
+        let perms = permutations [x, x, x, y, y]
+         in for_ perms $ \xs -> findOdd xs `shouldBe` x

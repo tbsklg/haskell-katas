@@ -1,7 +1,6 @@
 module Kyu6.FirstCharacterSpec where
 
 import Kyu6.FirstCharacter (firstDup)
-
 import Test.Hspec
 
 spec :: Spec

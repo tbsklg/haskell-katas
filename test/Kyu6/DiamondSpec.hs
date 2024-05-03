@@ -13,7 +13,7 @@ spec = do
     line 'A' 'C' `shouldBe` "  A  "
     line 'A' 'D' `shouldBe` "   A   "
     line 'B' 'D' `shouldBe` "  B B  "
-    line 'C' 'C' `shouldBe` "C   C" 
+    line 'C' 'C' `shouldBe` "C   C"
     line 'D' 'D' `shouldBe` "D     D"
     line 'E' 'E' `shouldBe` "E       E"
 
@@ -21,13 +21,13 @@ spec = do
     line 'B' 'C' `shouldBe` " B B "
     line 'B' 'D' `shouldBe` "  B B  "
     line 'B' 'E' `shouldBe` "   B B   "
-  
+
   it "should calculate middle spaces" $ do
     middleSpaces 'A' `shouldBe` []
     middleSpaces 'B' `shouldBe` " "
     middleSpaces 'C' `shouldBe` "   "
     middleSpaces 'D' `shouldBe` "     "
-  
+
   it "should mirror" $ do
     mirror "A" `shouldBe` "A"
     mirror "AB" `shouldBe` "ABA"

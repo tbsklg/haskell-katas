@@ -1,4 +1,4 @@
-module Kyu8.FindMaximumAndMinimumValuesOfAList (minimum,maximum) where
+module Kyu8.FindMaximumAndMinimumValuesOfAList (minimum, maximum) where
 
 import qualified Prelude as P
 

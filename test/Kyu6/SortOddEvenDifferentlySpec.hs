@@ -1,7 +1,7 @@
 module Kyu6.SortOddEvenDifferentlySpec (spec) where
 
-import Test.Hspec
 import Kyu6.SortOddEvenDifferently (paritySort)
+import Test.Hspec
 
 spec :: Spec
 spec = do

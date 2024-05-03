@@ -7,24 +7,24 @@ import Text.Printf
 
 spec :: Spec
 spec = do
-  describe "examples" $
-    do
+  describe "examples"
+    $ do
       it (printf "Should return the right comparison results.")
-      $ do
-        (compare x y) `shouldBe` GT
-        (compare y x) `shouldBe` LT
-        (compare x z) `shouldBe` LT
-        (compare z x) `shouldBe` GT
-        (compare y z) `shouldBe` LT
-        (compare z y) `shouldBe` GT
-        (compare x x) `shouldBe` EQ
-        (compare y y) `shouldBe` EQ
-        (compare z z) `shouldBe` EQ
-  describe "Sorting list of strings" $
-    do
+    $ do
+      (compare x y) `shouldBe` GT
+      (compare y x) `shouldBe` LT
+      (compare x z) `shouldBe` LT
+      (compare z x) `shouldBe` GT
+      (compare y z) `shouldBe` LT
+      (compare z y) `shouldBe` GT
+      (compare x x) `shouldBe` EQ
+      (compare y y) `shouldBe` EQ
+      (compare z z) `shouldBe` EQ
+  describe "Sorting list of strings"
+    $ do
       it (printf "should return %s given %s as input" (show stringsExpected) (show strings))
-      $ do
-        (sort strings) `shouldBe` stringsExpected
+    $ do
+      (sort strings) `shouldBe` stringsExpected
   where
     x = LengthList [1, 2, 3, 4, 5]
     y = LengthList [1, 2, 3, 4]

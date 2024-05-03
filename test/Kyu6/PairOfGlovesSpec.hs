@@ -1,6 +1,6 @@
 module Kyu6.PairOfGlovesSpec (spec) where
 
-import Kyu6.PairOfGloves (numberOfPairs, Colour (..))
+import Kyu6.PairOfGloves (Colour (..), numberOfPairs)
 import Test.Hspec
 
 spec :: Spec

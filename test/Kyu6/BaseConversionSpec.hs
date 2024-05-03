@@ -17,6 +17,7 @@ alphaNumeric = Alphabet $ ['0' .. '9'] ++ ['a' .. 'z'] ++ ['A' .. 'Z']
 allAlphabets = [bin, oct, dec, hex, alphaLower, alphaUpper, alpha, alphaNumeric]
 
 main = hspec spec
+
 spec = do
   describe "convert" $ do
     it "should work on some simple examples" $ do

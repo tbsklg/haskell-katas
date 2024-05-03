@@ -1,8 +1,8 @@
 module Kyu5.Rot13Spec where
-import Test.Hspec
-import Test.QuickCheck
 
 import Kyu5.Rot13 (rot13)
+import Test.Hspec
+import Test.QuickCheck
 
 spec :: Spec
 spec = do

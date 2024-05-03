@@ -7,7 +7,7 @@ tableGame table
            [a + c, a + b + c + d, b + d],
            [c, c + d, d]
          ] =
-    Just [a, b, c, d]
+      Just [a, b, c, d]
   | otherwise = Nothing
   where
     a = table !! 0 !! 0

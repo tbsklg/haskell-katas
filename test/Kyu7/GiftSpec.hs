@@ -9,9 +9,11 @@ main = hspec spec
 spec = do
   describe "something" $ do
     it "should return Nothing on an empty list" $
-      property $ \x -> buy (x :: Integer) [] `shouldBe` Nothing
+      property $
+        \x -> buy (x :: Integer) [] `shouldBe` Nothing
     it "should return Nothing on a short list" $
-      property $ \x y -> buy (x :: Integer) [y] `shouldBe` Nothing
+      property $
+        \x y -> buy (x :: Integer) [y] `shouldBe` Nothing
     it "should work for the examples" $ do
       buy 2 [1, 1] `shouldBe` Just (0, 1)
       buy 3 [1, 1] `shouldBe` Nothing

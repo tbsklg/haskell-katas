@@ -9,7 +9,7 @@ valleys = go . scanl surface 0
     go (x : xs) = go xs
     go _ = 0
 
-surface :: Num a => a -> Char -> a
+surface :: (Num a) => a -> Char -> a
 surface x 'U' = x + 1
 surface x 'D' = x - 1
 surface x _ = x

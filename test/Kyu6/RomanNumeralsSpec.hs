@@ -1,6 +1,7 @@
 module Kyu6.RomanNumeralsSpec where
-import Test.Hspec
+
 import Kyu6.RomanNumerals (solution)
+import Test.Hspec
 
 spec :: Spec
 spec = do
@@ -16,4 +17,3 @@ spec = do
     it "should translate 1000 to M" $ solution 1889 `shouldBe` "MDCCCLXXXIX"
     it "should translate 1889 to MDCCCLXXXIX" $ solution 1889 `shouldBe` "MDCCCLXXXIX"
     it "should translate 1989 to MCMLXXXIX" $ solution 1989 `shouldBe` "MCMLXXXIX"
-

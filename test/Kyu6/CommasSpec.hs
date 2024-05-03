@@ -17,5 +17,4 @@ spec = do
       property $
         forAll (arbitrary `suchThat` (>= 0)) $ \x ->
           let commas = length . filter (== ',') . groupByCommas $ x
-           in  commas `shouldBe` (length (show x) - 1) `div` 3
-
+           in commas `shouldBe` (length (show x) - 1) `div` 3

@@ -1,7 +1,7 @@
 module Kyu6.HandSpec where
 
-import Test.Hspec
 import Kyu6.Hand
+import Test.Hspec
 
 spec :: Spec
 spec = do
@@ -13,4 +13,3 @@ spec = do
 
 -- the following line is optional for 8.2
 main = hspec spec
-

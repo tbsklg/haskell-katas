@@ -9,7 +9,7 @@ paul s
   where
     misery = sum . map score $ s
 
-score :: Num p => [Char] -> p
+score :: (Num p) => [Char] -> p
 score "life" = 0
 score "eating" = 1
 score "kata" = 5

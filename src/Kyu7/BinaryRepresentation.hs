@@ -19,12 +19,12 @@ addOne xs = reverse . go . reverse $ xs
 invert :: [Int32] -> [Int32]
 invert = map (1 -)
 
-bin32 :: Integral a => a -> [a]
+bin32 :: (Integral a) => a -> [a]
 bin32 x = replicate (32 - bits) 0 ++ bin x
   where
     bits = length . bin $ x
 
-bin :: Integral a => a -> [a]
+bin :: (Integral a) => a -> [a]
 bin 0 = []
 bin x = bin (x `div` 2) ++ [x `mod` 2]
 

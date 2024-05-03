@@ -1,8 +1,8 @@
 module Kyu6.HammingCode (decode, encode) where
 
-import Data.Char (digitToInt, chr)
-import Data.List.Split (chunksOf)
+import Data.Char (chr, digitToInt)
 import Data.List (sort)
+import Data.List.Split (chunksOf)
 import Text.Printf (printf)
 
 decode, encode :: [Char] -> [Char]
@@ -20,6 +20,5 @@ correctBits xs = (!! 1) . sort $ xs
 toDec :: [Int] -> Int
 toDec = foldl (\acc curr -> acc * 2 + curr) 0
 
-toEightBitBin:: [Char] -> [Char]
+toEightBitBin :: [Char] -> [Char]
 toEightBitBin = concatMap (printf "%08b")
-

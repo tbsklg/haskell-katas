@@ -14,7 +14,7 @@ ocean = "X"
 totalInfectedPeople :: [Char] -> Int
 totalInfectedPeople p = sum $ map infectedPeople (splitOn ocean p)
 
-infectedPeople :: Foldable t => t Char -> Int
+infectedPeople :: (Foldable t) => t Char -> Int
 infectedPeople x
   | '1' `elem` x = length x
   | otherwise = 0

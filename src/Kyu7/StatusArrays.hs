@@ -6,13 +6,13 @@ import Data.List (sort, sortBy)
 status :: [Int] -> [Int]
 status = map (\(x, y) -> snd y) . sortBy compareStatus . map status' . appearances . zip [0 ..]
 
-status' :: Num a => (a, (a, b)) -> (a, (a, b))
+status' :: (Num a) => (a, (a, b)) -> (a, (a, b))
 status' (x, y) = (position + elementsBefore + 1, y)
   where
     position = fst y
     elementsBefore = x
 
-appearances :: Ord a1 => [(a2, a1)] -> [(Int, (a2, a1))]
+appearances :: (Ord a1) => [(a2, a1)] -> [(Int, (a2, a1))]
 appearances [] = []
 appearances l = elements l l
   where

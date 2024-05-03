@@ -13,4 +13,5 @@ spec = do
       mainDiagonalProduct [[1, 2, 3], [4, 5, 6], [7, 8, 9]] `shouldBe` 1 * 5 * 9
 
     it "should work for random 1x1 matrices" $
-      property $ \x -> mainDiagonalProduct [[x]] `shouldBe` (x :: Double)
+      property $
+        \x -> mainDiagonalProduct [[x]] `shouldBe` (x :: Double)

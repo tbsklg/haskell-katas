@@ -1,4 +1,5 @@
 module Kyu6.SortArraySpec where
+
 import Kyu6.SortArray
 import Test.Hspec
 

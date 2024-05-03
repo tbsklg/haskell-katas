@@ -9,6 +9,6 @@ bitsBattle w
     ones = length . filter (== 1) . concatMap decToBin . filter odd $ w
     zeros = length . filter (== 0) . concatMap decToBin . filter even $ w
 
-decToBin :: Integral a => a -> [a]
+decToBin :: (Integral a) => a -> [a]
 decToBin 0 = []
 decToBin n = (n `mod` 2) : decToBin (n `div` 2)

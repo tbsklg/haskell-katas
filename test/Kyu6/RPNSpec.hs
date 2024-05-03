@@ -21,4 +21,3 @@ spec = do
       calc "1 3 -" `shouldBe` (-2)
     it "should support division" $
       calc "4 2 /" `shouldBe` 2
-

@@ -6,10 +6,11 @@ lastSurvivors :: String -> String
 lastSurvivors xs
   | xs' == xs = xs
   | otherwise = lastSurvivors xs'
-  where xs' = reduceDuplicates xs
+  where
+    xs' = reduceDuplicates xs
 
 reduceDuplicates :: String -> String
-reduceDuplicates (x:xs)
+reduceDuplicates (x : xs)
   | elem x xs = reduceDuplicates $ nextLetter x : delete x xs
   | otherwise = x : reduceDuplicates xs
   where

@@ -1,7 +1,7 @@
 module Kyu6.TheWheat where
 
-import Data.Sequence (Seq(..), singleton, fromList)
 import Data.Foldable
+import Data.Sequence (Seq (..), fromList, singleton)
 
 wheatFromChaff :: [Int] -> [Int]
 wheatFromChaff = toList . treat . fromList

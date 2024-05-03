@@ -10,14 +10,14 @@ rank st we n
   | null st = "No participants"
   | n > length players = "Not enough participants"
   | otherwise = traceShow (scores) fst $ scores !! (n - 1)
- where
-  rank (a, b) (c, d)
-    | b == d = compare a c
-    | b > d = LT
-    | otherwise = GT
+  where
+    rank (a, b) (c, d)
+      | b == d = compare a c
+      | b > d = LT
+      | otherwise = GT
 
-  scores = sortBy rank . zip players . zipWith (*) (map som players) $ we
-  players = splitOn "," st
+    scores = sortBy rank . zip players . zipWith (*) (map som players) $ we
+    players = splitOn "," st
 
-  som x = (+) (length x) . sum . map (alphabetPosition . toLower) $ x
-  alphabetPosition x = ord x - ord 'a' + 1
+    som x = (+) (length x) . sum . map (alphabetPosition . toLower) $ x
+    alphabetPosition x = ord x - ord 'a' + 1

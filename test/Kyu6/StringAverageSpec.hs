@@ -14,4 +14,3 @@ spec = do
       averageString "zero zero zero zero zero" `shouldBe` "zero"
       averageString "one one eight one" `shouldBe` "two"
       averageString "" `shouldBe` "n/a"
-

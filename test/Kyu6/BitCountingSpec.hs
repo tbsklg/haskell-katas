@@ -1,7 +1,7 @@
 module Kyu6.BitCountingSpec (spec) where
 
-import Test.Hspec
 import Kyu6.BitCounting (countBits)
+import Test.Hspec
 
 spec :: Spec
 spec = do
@@ -11,4 +11,3 @@ spec = do
     countBits 7 `shouldBe` 3
     countBits 9 `shouldBe` 2
     countBits 10 `shouldBe` 2
-

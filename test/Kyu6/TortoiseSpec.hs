@@ -1,6 +1,6 @@
 module Kyu6.TortoiseSpec where
-import Kyu6.Tortoise
 
+import Kyu6.Tortoise
 import Test.Hspec
 import Text.Printf (printf)
 
@@ -15,4 +15,3 @@ spec = do
     testTortoise 720 850 70 (Just (0, 32, 18))
     testTortoise 80 100 40 (Just (2, 0, 0))
     testTortoise 80 91 37 (Just (3, 21, 49))
-

@@ -1,6 +1,6 @@
 module Kyu6.FindOutlier (findOutlier) where
 
-findOutlier :: [Int] -> Int 
+findOutlier :: [Int] -> Int
 findOutlier xs
   | length evens == 1 = head evens
   | otherwise = head odds

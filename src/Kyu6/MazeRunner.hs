@@ -35,16 +35,16 @@ findStart maze =
     . map (second fromJust)
     $ [(x, y) | (x, y) <- zip [0 ..] . map (elemIndex 2) $ maze, isJust y]
 
-moveNorth :: Num a => (a, b) -> (a, b)
+moveNorth :: (Num a) => (a, b) -> (a, b)
 moveNorth (x, y) = (x - 1, y)
 
-moveSouth :: Num a => (a, b) -> (a, b)
+moveSouth :: (Num a) => (a, b) -> (a, b)
 moveSouth (x, y) = (x + 1, y)
 
-moveEast :: Num b => (a, b) -> (a, b)
+moveEast :: (Num b) => (a, b) -> (a, b)
 moveEast (x, y) = (x, y + 1)
 
-moveWest :: Num b => (a, b) -> (a, b)
+moveWest :: (Num b) => (a, b) -> (a, b)
 moveWest (x, y) = (x, y - 1)
 
 moves :: [(Char, (Int, Int) -> (Int, Int))]

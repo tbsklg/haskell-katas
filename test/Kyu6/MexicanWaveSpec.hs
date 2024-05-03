@@ -1,18 +1,16 @@
 module Kyu6.MexicanWaveSpec where
 
-import Test.Hspec
 import Kyu6.MexicanWave
-
-
 import Test.HUnit (assertEqual)
+import Test.Hspec
 
 myTest s exp = do
   assertEqual msg exp actual
-  where 
+  where
     actual = wave s
     msg = "Failed at: " ++ showArgs
     showArgs = s
-    
+
 spec :: Spec
 spec = do
   it "Fixed cases " $ do

@@ -11,7 +11,7 @@ anyOdd =
     . reverse
     . bin
 
-bin :: Integral a => a -> [a]
+bin :: (Integral a) => a -> [a]
 bin 0 = []
 bin x = bin (x `div` 2) ++ [x `mod` 2]
 

@@ -1,7 +1,7 @@
 module Kyu6.VolTank where
 
 tankvol :: Int -> Int -> Int -> Int
-tankvol h d vt = round segmentArea 
+tankvol h d vt = round segmentArea
   where
     radius = fromIntegral d / 2
     length = fromIntegral vt / (pi * (radius ^ 2))

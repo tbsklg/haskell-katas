@@ -9,4 +9,3 @@ squaresInRect lng wdth
       | l == w = [l]
       | l > w = w : go (l - w) w
       | l < w = l : go l (w - l)
-

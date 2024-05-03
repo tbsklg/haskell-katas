@@ -21,4 +21,5 @@ spec = do
         ]
 
     it "should return a on a list of length two" $
-      property $ \x y -> add [x, y] `shouldBe` x + 2 * (y :: Integer)
+      property $
+        \x y -> add [x, y] `shouldBe` x + 2 * (y :: Integer)

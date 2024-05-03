@@ -9,29 +9,29 @@ morseCodes = M.fromList [("-", "T"), ("--", "M"), ("---", "O"), ("-----", "0"), 
 
 decodeMorse :: String -> String
 decodeMorse = unwords . map decode . words'
- where
-  words' = splitOn "  "
-  decode = concatMap decoded . words
-  decoded x = morseCodes M.! x
+  where
+    words' = splitOn "  "
+    decode = concatMap decoded . words
+    decoded x = morseCodes M.! x
 
 decodeBits :: String -> String
 decodeBits bits = decode (trimZeros bits) (transmissionRate bits)
- where
-  decode "" _ = ""
-  decode rBits@('1' : _) rate = (dotOrDash rate . takeWhile (== '1') $ rBits) ++ decode (dropWhile (== '1') rBits) rate
-  decode rBits@('0' : _) rate = (pause rate . takeWhile (== '0') $ rBits) ++ decode (dropWhile (== '0') rBits) rate
-  decode _ _ = error "Invalid message"
+  where
+    decode "" _ = ""
+    decode rBits@('1' : _) rate = (dotOrDash rate . takeWhile (== '1') $ rBits) ++ decode (dropWhile (== '1') rBits) rate
+    decode rBits@('0' : _) rate = (pause rate . takeWhile (== '0') $ rBits) ++ decode (dropWhile (== '0') rBits) rate
+    decode _ _ = error "Invalid message"
 
-  dotOrDash rate signal
-    | length signal == rate = "."
-    | length signal == 3 * rate = "-"
-    | otherwise = error "Invalid signal"
+    dotOrDash rate signal
+      | length signal == rate = "."
+      | length signal == 3 * rate = "-"
+      | otherwise = error "Invalid signal"
 
-  pause rate signal
-    | length signal == rate = ""
-    | length signal == 3 * rate = " "
-    | length signal == 7 * rate = "   "
-    | otherwise = error "Invalid signal"
+    pause rate signal
+      | length signal == rate = ""
+      | length signal == 3 * rate = " "
+      | length signal == 7 * rate = "   "
+      | otherwise = error "Invalid signal"
 
 transmissionRate :: String -> Int
 transmissionRate = minimum . map length . group . trimZeros

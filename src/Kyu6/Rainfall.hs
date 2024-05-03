@@ -11,8 +11,8 @@ variance :: String -> String -> Double
 variance twn strng = case lookup twn (parseTowns strng) of
   Nothing -> -1
   Just nums -> (sum $ map (\x -> (x - mean') ^ 2) nums) / fromIntegral (length nums)
-   where
-    mean' = mean twn strng
+    where
+      mean' = mean twn strng
 
 parseTowns :: String -> [(String, [Double])]
 parseTowns raw = map parseTown . lines $ raw

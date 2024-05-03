@@ -9,7 +9,7 @@ alphabetWar chars
     left = sum (map points (leftWins chars))
     right = sum (map points (rightWins chars))
 
-points :: Num p => Char -> p
+points :: (Num p) => Char -> p
 points w
   | w == 'w' || w == 'm' = 4
   | w == 'p' || w == 'q' = 3

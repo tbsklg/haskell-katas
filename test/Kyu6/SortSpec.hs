@@ -6,4 +6,4 @@ import Test.Hspec
 spec :: Spec
 spec = do
   it "example string" $ do
-    sortme ["Hello","there","I'm","fine"] `shouldBe` ["fine","Hello","I'm","there"]
+    sortme ["Hello", "there", "I'm", "fine"] `shouldBe` ["fine", "Hello", "I'm", "there"]

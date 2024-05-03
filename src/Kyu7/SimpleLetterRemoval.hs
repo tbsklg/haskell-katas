@@ -10,9 +10,9 @@ solve l k = remove' l k alphabet
     remove' l k a
       | k > length l = []
       | otherwise =
-        case elemIndex (head a) l of
-          Just a -> remove' (take a l ++ drop (a + 1) l) (k - 1) alphabet
-          Nothing -> remove' l k (tail a)
+          case elemIndex (head a) l of
+            Just a -> remove' (take a l ++ drop (a + 1) l) (k - 1) alphabet
+            Nothing -> remove' l k (tail a)
 
 alphabet :: [Char]
 alphabet = ['a' .. 'z']

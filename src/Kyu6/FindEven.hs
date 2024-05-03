@@ -3,7 +3,7 @@ module Kyu6.FindEven where
 findEvenIndex :: [Int] -> Int
 findEvenIndex arr = findIndexAt [0 ..]
   where
-    findIndexAt (i:is)
+    findIndexAt (i : is)
       | i == length arr = -1
       | left == right = i
       | otherwise = findIndexAt is

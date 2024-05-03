@@ -5,13 +5,13 @@ import Data.List.Split (splitOn)
 
 abbreviate :: String -> String
 abbreviate = unwords . map abbreviateWord . words'
- where
-  words' = splitOn " "
+  where
+    words' = splitOn " "
 
-  abbreviateWord [] = []
-  abbreviateWord word@(x : xs)
-    | isAlpha x = (abbreviate' . takeWhile isAlpha $ word) ++ (abbreviateWord . dropWhile isAlpha $ word)
-    | otherwise = x : abbreviateWord xs
+    abbreviateWord [] = []
+    abbreviateWord word@(x : xs)
+      | isAlpha x = (abbreviate' . takeWhile isAlpha $ word) ++ (abbreviateWord . dropWhile isAlpha $ word)
+      | otherwise = x : abbreviateWord xs
 
-  abbreviate' xs | length xs < 4 = xs
-  abbreviate' (x : xs) = [x] ++ show (length xs - 1) ++ [last xs]
+    abbreviate' xs | length xs < 4 = xs
+    abbreviate' (x : xs) = [x] ++ show (length xs - 1) ++ [last xs]

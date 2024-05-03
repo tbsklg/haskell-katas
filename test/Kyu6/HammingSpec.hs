@@ -1,4 +1,5 @@
 module Kyu6.HammingSpec where
+
 import Kyu6.Hamming (hamming)
 import Test.Hspec
 

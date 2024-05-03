@@ -1,6 +1,6 @@
 module Kyu6.SortArray where
 
-import Data.List (sortOn, sort)
+import Data.List (sort, sortOn)
 
 sortArray :: [Int] -> [Int]
 sortArray xs = map snd . sortOn fst $ (evens ++ sortedOdd)
