@@ -14,7 +14,7 @@ type Distance = Int
 chooseBestSum :: MaxDistance -> MaxTowns -> Distances -> Maybe Distance
 chooseBestSum t k =
   headMay
-    -- seee https://ro-che.info/articles/2016-04-02-descending-sort-haskell
+    -- see https://ro-che.info/articles/2016-04-02-descending-sort-haskell
     . sortBy (comparing Down)
     . filter (<= t)
     . map sum
