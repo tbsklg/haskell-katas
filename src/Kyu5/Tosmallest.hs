@@ -4,26 +4,24 @@ import Data.Char (digitToInt)
 import Data.List (minimumBy, nub)
 
 smallest :: Integer -> (Integer, Int, Int)
-smallest n = (asInteger ys, i, j)
-  where
-    (ys, i, j) = findSmallest . digits $ n
+smallest = findSmallest . digits
 
-findSmallest :: [Integer] -> ([Integer], Int, Int)
-findSmallest [] = ([], 0, 0)
+findSmallest :: [Integer] -> (Integer, Int, Int)
+findSmallest [] = (0, 0, 0)
 findSmallest ys
-  | unique ys = (ys, 0, 0)
+  | unique ys = (asInteger ys, 0, 0)
   | otherwise = find . zip [0 ..] $ ys
   where
-    find :: [(Int, Integer)] -> ([Integer], Int, Int)
-    find [] = (ys, 0, 0)
-    find ((i, x) : xs) = case map fst . filter (\(_, z) -> z <= x) $ xs of
+    find :: [(Int, Integer)] -> (Integer, Int, Int)
+    find [] = (asInteger ys, 0, 0)
+    find ((i, x) : xs) = case map fst . filter ((<= x) . snd) $ xs of
       [] -> find xs
       ps ->
         minimumBy (\y z -> compare (fst' y) (fst' z))
           . concatMap
             ( \j ->
-                [ (swap ys (i, j), i, j),
-                  (swap ys (j, i), j, i)
+                [ (asInteger $ swap ys (i, j), i, j),
+                  (asInteger $ swap ys (j, i), j, i)
                 ]
             )
           $ ps
@@ -33,10 +31,6 @@ unique = (== 1) . length . nub
 
 fst' :: (a, b, c) -> a
 fst' (x, _, _) = x
-
-minimumMay :: (Ord a) => [a] -> Maybe a
-minimumMay [] = Nothing
-minimumMay xs = Just . minimum $ xs
 
 swap :: (Ord a) => [a] -> (Int, Int) -> [a]
 swap [] _ = []
