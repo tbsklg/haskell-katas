@@ -20,8 +20,8 @@ findSmallest ys
         minimumBy (\y z -> compare (fst' y) (fst' z))
           . concatMap
             ( \j ->
-                [ (asInteger $ swap ys (i, j), i, j),
-                  (asInteger $ swap ys (j, i), j, i)
+                [ (asInteger $ moveDigit ys (i, j), i, j),
+                  (asInteger $ moveDigit ys (j, i), j, i)
                 ]
             )
           $ ps
@@ -32,11 +32,11 @@ unique = (== 1) . length . nub
 fst' :: (a, b, c) -> a
 fst' (x, _, _) = x
 
-swap :: (Ord a) => [a] -> (Int, Int) -> [a]
-swap [] _ = []
-swap xs (from, to) = insert to (xs !! from) . remove from $ xs
+moveDigit :: [a] -> (Int, Int) -> [a]
+moveDigit [] _ = []
+moveDigit xs (from, to) = insert to (xs !! from) . remove from $ xs
 
-insert :: (Ord a) => Int -> a -> [a] -> [a]
+insert :: Int -> a -> [a] -> [a]
 insert n y (x : xs) = take n (x : xs) ++ [y] ++ drop n (x : xs)
 
 remove :: Int -> [a] -> [a]
