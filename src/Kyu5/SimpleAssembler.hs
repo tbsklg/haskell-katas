@@ -1,7 +1,9 @@
 module Kyu5.SimpleAssembler (simpleAssembler) where
 
+import Control.Monad.State
 import Data.Char (isAlpha)
 import qualified Data.Map.Strict as M
+import Debug.Trace
 
 type Registers = M.Map String Int
 
@@ -10,6 +12,12 @@ type Index = String
 type Program = ([Expr], [Expr])
 
 data Value = Index String | NumVal Int deriving (Show)
+
+data ProgramState = ProgramState
+  { registers :: Registers,
+    step :: Int
+  }
+  deriving (Show)
 
 data Expr
   = Value
@@ -20,10 +28,12 @@ data Expr
   deriving (Show)
 
 simpleAssembler :: [String] -> Registers
-simpleAssembler xs =
-  let prog = (expr, [])
-      expr = map (toExpr . words) xs
-   in eval prog M.empty
+simpleAssembler xs = registers $ execState (eval exprs) initialState
+  where
+    exprs = map (toExpr . words) xs
+
+initialState :: ProgramState
+initialState = ProgramState M.empty 0
 
 toExpr :: [String] -> Expr
 toExpr ["mov", x, y] = Mov (toVal x) (toVal y)
@@ -35,44 +45,63 @@ toExpr _ = error "Invalid expression"
 toVal :: String -> Value
 toVal x = if all isAlpha x then Index x else NumVal (read x :: Int)
 
-eval :: Program -> Registers -> Registers
-eval ([], _) env = env
-eval (e@(Dec (Index i)) : ps, ys) env = eval (ps, e : ys) (dec i env)
-eval (e@(Inc (Index i)) : ps, ys) env = eval (ps, e : ys) (inc i env)
-eval (e@(Mov v1 v2) : ps, ys) env = eval (ps, e : ys) (cp v1 v2 env)
-eval p@((Jnz v1 v2) : _, _) env = let prog = jnz v1 v2 p env in eval prog env
+eval :: [Expr] -> State ProgramState ProgramState
+eval exprs = do
+  program <- get
+  if step program >= length exprs || step program < 0
+    then return program
+    else applyExpression (exprs !! step program) >> eval exprs
 
-dec :: Index -> Registers -> Registers
-dec i env =
-  let val = M.findWithDefault 0 i env
-   in M.insert i (val - 1) env
+applyExpression :: Expr -> State ProgramState ()
+applyExpression (Dec (Index i)) = dec i
+applyExpression (Inc (Index i)) = inc i
+applyExpression (Mov v1 v2) = cp v1 v2
+applyExpression (Jnz v1 v2) = jnz v1 v2
 
-inc :: Index -> Registers -> Registers
-inc i env =
-  let val = M.findWithDefault 0 i env
-   in M.insert i (val + 1) env
+cp :: Value -> Value -> State ProgramState ()
+cp (Index i) (NumVal x) = do
+  regs <- gets registers
+  step <- gets step
+  put $ ProgramState (M.insert i x regs) (step + 1)
+cp (Index i) (Index j) = do
+  regs <- gets registers
+  step <- gets step
+  let val = M.findWithDefault 0 j regs
+  put $ ProgramState (M.insert i val regs) (step + 1)
 
-cp :: Value -> Value -> Registers -> Registers
-cp (Index i) (NumVal x) env = M.insert i x env
-cp (Index i) (Index j) env =
-  let val = M.findWithDefault 0 j env
-   in M.insert i val env
+dec :: Index -> State ProgramState ()
+dec i = do
+  regs <- gets registers
+  step <- gets step
+  let val = M.findWithDefault 0 i regs
+  put $ ProgramState (M.insert i (val - 1) regs) (step + 1)
 
-jnz :: Value -> Value -> Program -> Registers -> Program
-jnz (Index i) (NumVal v2) p@(x : xs, ys) env =
-  let v1 = M.findWithDefault 0 i env
-   in if v1 == 0 then (xs, x : ys) else adjustProgram v2 p
-jnz (Index i) (Index j) p@(x : xs, ys) env =
-  let v1 = M.findWithDefault 0 i env
-      v2 = M.findWithDefault 0 j env
-   in if v1 == 0 then (xs, x : ys) else adjustProgram v2 p
-jnz (NumVal v1) (NumVal v2) p@(x : xs, ys) env =
-  if v1 == 0 then (xs, x : ys) else adjustProgram v2 p
+inc :: Index -> State ProgramState ()
+inc i = do
+  regs <- gets registers
+  step <- gets step
+  let val = M.findWithDefault 0 i regs
+  put $ ProgramState (M.insert i (val + 1) regs) (step + 1)
 
-adjustProgram :: Int -> Program -> Program
-adjustProgram i (e@(x : xs), ys) =
-  let prevExpr = (reverse . take (abs i) $ ys) ++ e
-      skipExpr = drop (abs i) e
-   in if i < 0
-        then (prevExpr, drop (abs i) ys)
-        else (skipExpr, take (abs i) (x : xs) ++ ys)
+jnz :: Value -> Value -> State ProgramState ()
+jnz (Index i) (NumVal v2) = do
+  regs <- gets registers
+  step <- gets step
+  let v1 = M.findWithDefault 0 i regs
+  if v1 == 0
+    then put $ ProgramState regs (step + 1)
+    else put $ ProgramState regs (step + v2)
+jnz (Index i) (Index j) = do
+  regs <- gets registers
+  step <- gets step
+  let v1 = M.findWithDefault 0 i regs
+      v2 = M.findWithDefault 0 j regs
+  if v1 == 0
+    then put $ ProgramState regs (step + 1)
+    else put $ ProgramState regs (step + v2)
+jnz (NumVal v1) (NumVal v2) = do
+  regs <- gets registers
+  step <- gets step
+  if v1 == 0
+    then put $ ProgramState regs (step + 1)
+    else put $ ProgramState regs (step + v2)

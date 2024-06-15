@@ -1,8 +1,8 @@
 module Kyu7.LettersBestFriendSpec (spec) where
 
 import Kyu7.LettersBestFriend (bestFriend)
-import Test.Hspec
 import Test.HUnit (assertEqual)
+import Test.Hspec
 
 spec :: Spec
 spec = do

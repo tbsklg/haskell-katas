@@ -1,9 +1,9 @@
 module Kyu7.SecondSymbolSpec where
 
-import Test.QuickCheck
-import Test.Hspec
-import Test.HUnit (assertEqual)
 import Kyu7.SecondSymbol (secondSymbol)
+import Test.HUnit (assertEqual)
+import Test.Hspec
+import Test.QuickCheck
 
 spec :: Spec
 spec = do

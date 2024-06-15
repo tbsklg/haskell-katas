@@ -13,4 +13,4 @@ spec = do
     cantBeatSoJoin [[], [], [], []] `shouldBe` []
     cantBeatSoJoin [[], [], [0], []] `shouldBe` [0]
     cantBeatSoJoin [[1, 0, 1, 0, 1, 0], [0, 1, 0, 0, 1, 0, 0, 1], [0], []] `shouldBe` [1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0]
-    cantBeatSoJoin [[0,1,1,1], [1,0,1,1], [1,1,0,1], [3]] `shouldBe` [0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 3]
+    cantBeatSoJoin [[0, 1, 1, 1], [1, 0, 1, 1], [1, 1, 0, 1], [3]] `shouldBe` [0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 3]
