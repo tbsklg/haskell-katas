@@ -1,6 +1,6 @@
 module Kyu7.BubblesortOnceSpec (spec) where
 
-import Kyu7.BubblesortOnce (bubblesortOnce)
+import Kyu7.BubbleSortOnce (bubblesortOnce)
 import Test.Hspec
 
 spec :: Spec

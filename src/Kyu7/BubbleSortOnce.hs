@@ -1,4 +1,4 @@
-module Kyu7.BubblesortOnce (bubblesortOnce) where
+module Kyu7.BubbleSortOnce (bubblesortOnce) where
 
 bubblesortOnce :: [Int] -> [Int]
 bubblesortOnce [] = []
