@@ -1,7 +1,7 @@
 module Kyu5.Sumdivsq where
 
 listSquared :: Int -> Int -> [(Int, Int)]
-listSquared m n = 
+listSquared m n =
   [(x, sum $ map (^ 2) $ divisors x) | x <- [m .. n], isSquare $ sum $ map (^ 2) $ divisors x]
 
 isSquare :: Int -> Bool

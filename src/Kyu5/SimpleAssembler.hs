@@ -1,9 +1,13 @@
 module Kyu5.SimpleAssembler (simpleAssembler) where
 
 import Control.Monad.State
+  ( MonadState (get, put),
+    State,
+    execState,
+    gets,
+  )
 import Data.Char (isAlpha)
 import qualified Data.Map.Strict as M
-import Debug.Trace
 
 type Registers = M.Map String Int
 
