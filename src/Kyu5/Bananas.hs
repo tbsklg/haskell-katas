@@ -8,7 +8,6 @@ bananas xs = go xs banana
   where
     go xs [] = ['-' <$ xs]
     go [] _ = []
-    go (x : xs) (b : bs) = 
-      [x : rest | x == b, rest <- go xs bs] 
+    go (x : xs) (b : bs) =
+      [x : rest | x == b, rest <- go xs bs]
         ++ ['-' : rest | rest <- go xs (b : bs)]
-
