@@ -4,13 +4,14 @@ import Data.List (elemIndex)
 import Data.Maybe (fromJust)
 
 type Code = String
+
 type Tape = String
+
 type Pos = Int
 
-
 data Program = MkProgram
-  { cmds :: ([Command], Pos)
-  , tape :: (Tape, Pos)
+  { cmds :: ([Command], Pos),
+    tape :: (Tape, Pos)
   }
   deriving (Show)
 
@@ -25,7 +26,7 @@ data Command
 interpreter :: String -> String -> String
 interpreter code tape =
   let cmds = commands code
-   in eval MkProgram{cmds = (cmds, 0), tape = (tape, 0)}
+   in eval MkProgram {cmds = (cmds, 0), tape = (tape, 0)}
 
 flipBit :: Int -> Tape -> Tape
 flipBit i t =
@@ -34,7 +35,7 @@ flipBit i t =
    in before ++ [flipped] ++ after
 
 eval :: Program -> Tape
-eval prog@MkProgram{cmds = (c, cp), tape = (t, tp)} =
+eval prog@MkProgram {cmds = (c, cp), tape = (t, tp)} =
   let endOfCmd = cp == length c
       outOfTape = tp < 0 || tp > length t - 1
    in if endOfCmd || outOfTape
@@ -42,19 +43,21 @@ eval prog@MkProgram{cmds = (c, cp), tape = (t, tp)} =
         else eval (exec prog)
 
 exec :: Program -> Program
-exec prog@MkProgram{cmds = (c, cp), tape = (t, tp)} = 
+exec prog@MkProgram {cmds = (c, cp), tape = (t, tp)} =
   let currentCommand = c !! cp
       currentTape = t !! tp
-  in case currentCommand of
-    MOVE_RIGHT -> prog{cmds = (c, cp + 1), tape = (t, tp + 1)}
-    MOVE_LEFT -> prog{cmds = (c, cp + 1), tape = (t, tp - 1)}
-    FLIP -> prog{cmds = (c, cp + 1), tape = (flipBit tp t, tp)}
-    JUMP_START -> if currentTape == '0'
-      then prog{cmds = (c, findEnd c cp)}
-      else prog{cmds = (c, cp + 1)}
-    JUMP_END -> if currentTape == '1'
-      then prog{cmds = (c, findStart c cp)}
-      else prog{cmds = (c, cp + 1)}
+   in case currentCommand of
+        MOVE_RIGHT -> prog {cmds = (c, cp + 1), tape = (t, tp + 1)}
+        MOVE_LEFT -> prog {cmds = (c, cp + 1), tape = (t, tp - 1)}
+        FLIP -> prog {cmds = (c, cp + 1), tape = (flipBit tp t, tp)}
+        JUMP_START ->
+          if currentTape == '0'
+            then prog {cmds = (c, findEnd c cp)}
+            else prog {cmds = (c, cp + 1)}
+        JUMP_END ->
+          if currentTape == '1'
+            then prog {cmds = (c, findStart c cp)}
+            else prog {cmds = (c, cp + 1)}
 
 findEnd :: [Command] -> Pos -> Pos
 findEnd cmds cp = find' (cp + 1) 0
