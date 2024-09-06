@@ -1,8 +1,8 @@
 module Kyu7.ArraySquareUpSpec (spec) where
 
 import Kyu7.ArraySquareUp (squareUp)
-import Test.Hspec
 import Test.HUnit (assertEqual)
+import Test.Hspec
 
 spec :: Spec
 spec = do

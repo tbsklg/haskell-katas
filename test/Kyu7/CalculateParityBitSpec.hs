@@ -1,8 +1,8 @@
 module Kyu7.CalculateParityBitSpec (spec) where
 
 import Kyu7.CalculateParityBit (checkParity)
-import Test.Hspec
 import Test.HUnit (assertEqual)
+import Test.Hspec
 
 spec :: Spec
 spec = do
